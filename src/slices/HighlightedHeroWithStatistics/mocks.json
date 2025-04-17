@@ -1,0 +1,125 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"main_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Zacznij tańczyć już dzisiaj",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nasza szkoła tańca to miejsce, gdzie pasja spotyka profesjonalizm. Tworzymy przestrzeń dla każdego – od początkujących, którzy dopiero odkrywają taniec, po zaawansowanych tancerzy szlifujących swoje umiejętności.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+					"width": 3882,
+					"height": 2584
+				},
+				"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+				"width": 3882,
+				"height": 2584,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "wire",
+				"credits": null,
+				"__TYPE__": "ImageContent"
+			},
+			"statistics": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"stat_number",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "200+"
+								}
+							],
+							[
+								"stat_label",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Odbytych zajęć",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"stat_number",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "5"
+								}
+							],
+							[
+								"stat_label",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Styli Tańca",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "FieldContent",
+				"value": "frame",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

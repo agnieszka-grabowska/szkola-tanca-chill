@@ -1,0 +1,66 @@
+{
+  "type": "SharedSlice",
+  "id": "highlighted_hero_with_statistics",
+  "name": "HighlightedHeroWithStatistics",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Default variation with main title, description, image and statistics.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "main_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Main Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        },
+        "button": {
+          "type": "Text",
+          "config": {
+            "label": "Button",
+            "placeholder": "Poznaj Nas"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image"
+          }
+        },
+        "statistics": {
+          "type": "Group",
+          "config": {
+            "label": "Statistics",
+            "fields": {
+              "stat_number": {
+                "type": "Text",
+                "config": {
+                  "label": "Stat Number"
+                }
+              },
+              "stat_label": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph,strong",
+                  "label": "Stat Label"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

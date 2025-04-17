@@ -1,0 +1,11 @@
+.div {
+  --padding: 24;
+  max-width: calc(1080px + (2px * var(--padding)));
+  margin: auto;
+  padding-inline: calc(1px * var(--padding));
+}
+@media (max-width: 600px) {
+  .div {
+    --padding: 16;
+  }
+}
