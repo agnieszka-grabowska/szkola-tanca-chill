@@ -1,0 +1,39 @@
+{
+  "format": "custom",
+  "id": "social_media",
+  "label": "Media Społecznościowe",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "social_media": {
+        "type": "Group",
+        "config": {
+          "label": "Media Społecznościowe",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Link",
+              "config": {
+                "label": "Nazwa",
+                "placeholder": "",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "icon": {
+              "type": "Select",
+              "config": {
+                "label": "Ikonka",
+                "placeholder": "",
+                "options": ["instagram", "facebook"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

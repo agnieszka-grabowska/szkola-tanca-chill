@@ -29,8 +29,38 @@ const HighlightedHeroWithStatistics: FC<HighlightedHeroWithStatisticsProps> = ({
           </div>
           {slice.primary.button && <Button onClick={() => {}}>{slice.primary.button}</Button>}
         </div>
-        <div>
-          <PrismicNextImage field={slice.primary.image} />
+        <div style={{ position: "relative" }}>
+          <div className={styles.imgWrapper}>
+            <div className={styles.backgroundCircle}></div>
+            <div className={styles.svgWrapper}>
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#e1585f" />
+                    <stop offset="100%" stopColor="#f19405" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="265"
+                  fill="none"
+                  stroke="url(#gradientStroke)"
+                  strokeWidth="9"
+                  strokeDasharray="22"
+                />
+              </svg>
+            </div>
+            <PrismicNextImage field={slice.primary.image} />
+          </div>
+          <div className={styles.statistics}>
+            {slice.primary.statistics.map((item, index) => (
+              <div key={index}>
+                <span>{item.stat_number}</span>
+                <PrismicRichText field={item.stat_label} />
+              </div>
+            ))}
+          </div>
         </div>
       </ConstrainedDiv>
     </section>

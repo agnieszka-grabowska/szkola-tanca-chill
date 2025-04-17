@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "media_gallery": {
+              "type": "SharedSlice"
+            },
             "highlighted_hero_with_statistics": {
               "type": "SharedSlice"
             }

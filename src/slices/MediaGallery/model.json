@@ -1,0 +1,45 @@
+{
+  "type": "SharedSlice",
+  "id": "media_gallery",
+  "name": "MediaGallery",
+  "variations": [
+    {
+      "id": "grid_gallery",
+      "name": "Grid Gallery",
+      "description": "This variation presents images in a grid layout with a prominent title and description above the gallery.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        },
+        "image_gallery": {
+          "type": "Group",
+          "config": {
+            "label": "Image Gallery",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -6,5 +6,6 @@ export const components = {
   highlighted_hero_with_statistics: dynamic(
     () => import("./HighlightedHeroWithStatistics"),
   ),
+  media_gallery: dynamic(() => import("./MediaGallery")),
   rich_text: dynamic(() => import("./RichText")),
 };

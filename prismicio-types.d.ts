@@ -4,7 +4,9 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomePageDocumentDataSlicesSlice = HighlightedHeroWithStatisticsSlice;
+type HomePageDocumentDataSlicesSlice =
+  | MediaGallerySlice
+  | HighlightedHeroWithStatisticsSlice;
 
 /**
  * Content for Strona Główna documents
@@ -152,7 +154,69 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = HomePageDocument | PageDocument;
+/**
+ * Item in *Media Społecznościowe → Media Społecznościowe*
+ */
+export interface SocialMediaDocumentDataSocialMediaItem {
+  /**
+   * Nazwa field in *Media Społecznościowe → Media Społecznościowe*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.social_media[].name
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  name: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Ikonka field in *Media Społecznościowe → Media Społecznościowe*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.social_media[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<"instagram" | "facebook">;
+}
+
+/**
+ * Content for Media Społecznościowe documents
+ */
+interface SocialMediaDocumentData {
+  /**
+   * Media Społecznościowe field in *Media Społecznościowe*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_media.social_media[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social_media: prismic.GroupField<
+    Simplify<SocialMediaDocumentDataSocialMediaItem>
+  >;
+}
+
+/**
+ * Media Społecznościowe document from Prismic
+ *
+ * - **API ID**: `social_media`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialMediaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SocialMediaDocumentData>,
+    "social_media",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomePageDocument
+  | PageDocument
+  | SocialMediaDocument;
 
 /**
  * Item in *HighlightedHeroWithStatistics → Default → Primary → Statistics*
@@ -269,6 +333,88 @@ export type HighlightedHeroWithStatisticsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *MediaGallery → Grid Gallery → Primary → Image Gallery*
+ */
+export interface MediaGallerySliceGridGalleryPrimaryImageGalleryItem {
+  /**
+   * Image field in *MediaGallery → Grid Gallery → Primary → Image Gallery*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media_gallery.grid_gallery.primary.image_gallery[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *MediaGallery → Grid Gallery → Primary*
+ */
+export interface MediaGallerySliceGridGalleryPrimary {
+  /**
+   * Title field in *MediaGallery → Grid Gallery → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media_gallery.grid_gallery.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *MediaGallery → Grid Gallery → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media_gallery.grid_gallery.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Image Gallery field in *MediaGallery → Grid Gallery → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media_gallery.grid_gallery.primary.image_gallery[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  image_gallery: prismic.GroupField<
+    Simplify<MediaGallerySliceGridGalleryPrimaryImageGalleryItem>
+  >;
+}
+
+/**
+ * Grid Gallery variation for MediaGallery Slice
+ *
+ * - **API ID**: `grid_gallery`
+ * - **Description**: This variation presents images in a grid layout with a prominent title and description above the gallery.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MediaGallerySliceGridGallery = prismic.SharedSliceVariation<
+  "grid_gallery",
+  Simplify<MediaGallerySliceGridGalleryPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MediaGallery*
+ */
+type MediaGallerySliceVariation = MediaGallerySliceGridGallery;
+
+/**
+ * MediaGallery Shared Slice
+ *
+ * - **API ID**: `media_gallery`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MediaGallerySlice = prismic.SharedSlice<
+  "media_gallery",
+  MediaGallerySliceVariation
+>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -340,12 +486,20 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      SocialMediaDocument,
+      SocialMediaDocumentData,
+      SocialMediaDocumentDataSocialMediaItem,
       AllDocumentTypes,
       HighlightedHeroWithStatisticsSlice,
       HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem,
       HighlightedHeroWithStatisticsSliceDefaultPrimary,
       HighlightedHeroWithStatisticsSliceVariation,
       HighlightedHeroWithStatisticsSliceDefault,
+      MediaGallerySlice,
+      MediaGallerySliceGridGalleryPrimaryImageGalleryItem,
+      MediaGallerySliceGridGalleryPrimary,
+      MediaGallerySliceVariation,
+      MediaGallerySliceGridGallery,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
