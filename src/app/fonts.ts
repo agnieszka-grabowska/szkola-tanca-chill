@@ -1,10 +1,10 @@
-import { Merriweather_Sans, Lexend } from "next/font/google";
+import { Playfair, Lexend } from "next/font/google";
 import "./globals.css";
 
-export const merriweatherSans = Merriweather_Sans({
+export const playfair = Playfair({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-merriweather-sans",
+  variable: "--font-playfair",
 });
 
 export const lexend = Lexend({

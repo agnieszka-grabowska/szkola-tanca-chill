@@ -1,6 +1,9 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import styles from "./MediaGallery.module.css";
+import Button from "@/components/Button/Button";
 
 /**
  * Props for `MediaGallery`.
@@ -15,9 +18,18 @@ const MediaGallery: FC<MediaGalleryProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className={styles.mediaGallery}
     >
-      Placeholder component for media_gallery (variation: {slice.variation})
-      Slices
+      <PrismicRichText field={slice.primary.title} />
+      <PrismicRichText field={slice.primary.description} />
+      <div>
+        {slice.primary.image_gallery.slice(0, 3).map((item, index) => (
+          <div key={index} className={styles.imageWrapper}>
+            <PrismicNextImage field={item.image} />
+          </div>
+        ))}
+      </div>
+      <Button field={slice.primary.button} />
     </section>
   );
 };

@@ -382,6 +382,16 @@ export interface MediaGallerySliceGridGalleryPrimary {
   image_gallery: prismic.GroupField<
     Simplify<MediaGallerySliceGridGalleryPrimaryImageGalleryItem>
   >;
+
+  /**
+   * Button field in *MediaGallery → Grid Gallery → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: media_gallery.grid_gallery.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**

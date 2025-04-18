@@ -1,4 +1,6 @@
 .button {
+  display: block;
+  width: fit-content;
   background-color: #e1585f;
   color: white;
   border: none;
@@ -8,6 +10,7 @@
   font-weight: 700;
   text-transform: capitalize;
   box-sizing: content-box;
+  text-decoration: none;
   transition:
     border 0.3s,
     background-color 0.2s;

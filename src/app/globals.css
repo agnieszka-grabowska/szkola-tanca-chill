@@ -30,6 +30,7 @@ button {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #fef4ea;
 }
 
 img,
@@ -39,6 +40,10 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 input,
@@ -60,6 +65,7 @@ h6 {
 
 p {
   text-wrap: pretty;
+  color: #836d6e;
 }
 h1,
 h2,
@@ -68,7 +74,8 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
-  font-family: var(--font-merriweather-sans);
+  font-family: var(--font-playfair);
+  letter-spacing: -0.03em;
 }
 
 #root,

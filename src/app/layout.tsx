@@ -1,6 +1,6 @@
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
-import { merriweatherSans, lexend } from "@/app/fonts";
+import { playfair, lexend } from "@/app/fonts";
 import "./globals.css";
 
 export default function RootLayout({
@@ -10,7 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} ${merriweatherSans.variable}`}>{children}</body>
+      <body className={`${lexend.className} ${playfair.variable}`}>{children}</body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );

@@ -38,8 +38,20 @@
               }
             }
           }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": false,
+            "allowText": true,
+            "repeat": false
+          }
         }
-      }
+      },
+      "items": {}
     }
   ]
 }
