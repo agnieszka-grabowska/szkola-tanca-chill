@@ -3,19 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"main_title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading1",
-						"content": {
-							"text": "Zacznij tańczyć już dzisiaj",
-							"spans": []
-						},
-						"direction": "ltr"
-					}
-				]
-			},
 			"description": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -118,6 +105,22 @@
 				"__TYPE__": "FieldContent",
 				"value": "frame",
 				"type": "Text"
+			},
+			"section_label": {
+				"__TYPE__": "FieldContent",
+				"value": "limited",
+				"type": "Text"
+			},
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Worry"
+						}
+					}
+				]
 			}
 		},
 		"items": []

@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "services_grid": {
+              "type": "SharedSlice"
+            },
             "media_gallery": {
               "type": "SharedSlice"
             },

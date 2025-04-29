@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomePageDocumentDataSlicesSlice =
+  | ServicesGridSlice
   | MediaGallerySlice
   | HighlightedHeroWithStatisticsSlice;
 
@@ -248,14 +249,24 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem 
  */
 export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   /**
-   * Main Title field in *HighlightedHeroWithStatistics → Default → Primary*
+   * Kolorowy nagłówek field in *HighlightedHeroWithStatistics → Default → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.main_title
+   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.section_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_label: prismic.KeyTextField;
+
+  /**
+   * Nagłówek field in *HighlightedHeroWithStatistics → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.section_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  main_title: prismic.TitleField;
+  section_title: prismic.RichTextField;
 
   /**
    * Description field in *HighlightedHeroWithStatistics → Default → Primary*
@@ -469,6 +480,108 @@ export type RichTextSlice = prismic.SharedSlice<
   RichTextSliceVariation
 >;
 
+/**
+ * Item in *ServicesGrid → Standard View → Primary → Oferta*
+ */
+export interface ServicesGridSliceStandardViewPrimaryServicesItem {
+  /**
+   * Service Image field in *ServicesGrid → Standard View → Primary → Oferta*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.services[].service_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  service_image: prismic.ImageField<never>;
+
+  /**
+   * Service Title field in *ServicesGrid → Standard View → Primary → Oferta*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.services[].service_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  service_title: prismic.TitleField;
+
+  /**
+   * Service Description field in *ServicesGrid → Standard View → Primary → Oferta*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.services[].service_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  service_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ServicesGrid → Standard View → Primary*
+ */
+export interface ServicesGridSliceStandardViewPrimary {
+  /**
+   * Nagłówek sekcji field in *ServicesGrid → Standard View → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.TitleField;
+
+  /**
+   * Opis field in *ServicesGrid → Standard View → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.section_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_description: prismic.RichTextField;
+
+  /**
+   * Oferta field in *ServicesGrid → Standard View → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<
+    Simplify<ServicesGridSliceStandardViewPrimaryServicesItem>
+  >;
+}
+
+/**
+ * Standard View variation for ServicesGrid Slice
+ *
+ * - **API ID**: `standard_view`
+ * - **Description**: A grid layout displaying several services with images and text descriptions.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesGridSliceStandardView = prismic.SharedSliceVariation<
+  "standard_view",
+  Simplify<ServicesGridSliceStandardViewPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesGrid*
+ */
+type ServicesGridSliceVariation = ServicesGridSliceStandardView;
+
+/**
+ * ServicesGrid Shared Slice
+ *
+ * - **API ID**: `services_grid`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesGridSlice = prismic.SharedSlice<
+  "services_grid",
+  ServicesGridSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -514,6 +627,11 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      ServicesGridSlice,
+      ServicesGridSliceStandardViewPrimaryServicesItem,
+      ServicesGridSliceStandardViewPrimary,
+      ServicesGridSliceVariation,
+      ServicesGridSliceStandardView,
     };
   }
 }

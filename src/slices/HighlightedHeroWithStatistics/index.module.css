@@ -1,107 +1,30 @@
-.title {
-  font-size: 2.3rem;
-  font-weight: 700;
-  color: #604141;
-  text-wrap: pretty;
-  text-shadow: 0px 11px 40px #e1585f48;
-  line-height: 1.3;
-}
-
-div:has(.text) {
+.section {
+  height: 100vh;
   display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 20px;
-  padding-top: 60px;
+  grid-template-columns: 45% 55%;
+  transform-style: preserve-3d;
 }
 
-.text {
-  margin-top: 100px;
-}
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateZ(1px) scale(0.95);
 
-.imgWrapper img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin-top: -100px;
-}
-
-.statistics {
-  position: absolute;
-  inset: 0;
-
-  & div {
-    backdrop-filter: blur(6px);
-    position: absolute;
-    background-color: #ffffff95;
-    border-radius: 4px;
-    padding: 8px 16px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow:
-      0px 4px 10px 0px hsla(0, 0%, 48%, 0.25),
-      0px 4px 7.3px 0px hsla(0, 0%, 48%, 0.17);
-    & span {
-      color: transparent;
-      background: linear-gradient(to right, #e1585f, #f19405);
-      background-clip: text;
-      font-weight: 700;
-      font-size: 1.875rem;
-      line-height: 1;
-    }
-
-    & p {
-      color: #414141;
-    }
+  & h1 {
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 
-  & div:nth-child(1) {
-    transform: translate(140px, 50px);
-  }
-  & div:nth-child(2) {
-    transform: translate(-300px, -50px);
-  }
-  & div:nth-child(3) {
-    transform: translate(-200px, 100px);
+  & p:nth-of-type(1) {
+    max-width: 400px;
+    margin-bottom: 48px;
   }
 }
 
-.backgroundCircle {
-  --size: 500px;
-  height: var(--size);
-  width: var(--size);
-  border-radius: 100%;
-  background: linear-gradient(to right, #e1585f, #f19405);
-  position: absolute;
-  top: calc(50% - (var(--size) / 2));
-  left: calc(50% - (var(--size) / 2));
-  z-index: -1;
-}
-
-.backgroundCircle::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, #e1585f, #f19405);
-  filter: blur(100px);
-}
-
-.svgWrapper {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: rotate(180deg);
-  animation: rotate 40s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.imageWrapper {
+  isolation: isolate;
+  transform: scale(1.2);
+  margin-top: 120px;
+  overflow: hidden;
 }

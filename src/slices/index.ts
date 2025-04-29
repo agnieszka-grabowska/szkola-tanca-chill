@@ -8,4 +8,5 @@ export const components = {
   ),
   media_gallery: dynamic(() => import("./MediaGallery")),
   rich_text: dynamic(() => import("./RichText")),
+  services_grid: dynamic(() => import("./ServicesGrid")),
 };

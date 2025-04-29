@@ -1,0 +1,37 @@
+.headerWrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #ffffff0a;
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  display: flex;
+  max-width: 1088px;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding-block: 16px;
+}
+
+.header svg {
+  max-height: 50px;
+  width: auto;
+  color: #3a1719;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  color: #7b5359;
+}
+
+.socialMedia {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  color: #7b5359;
+}

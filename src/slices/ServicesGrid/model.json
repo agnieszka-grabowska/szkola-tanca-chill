@@ -1,0 +1,65 @@
+{
+  "type": "SharedSlice",
+  "id": "services_grid",
+  "name": "ServicesGrid",
+  "variations": [
+    {
+      "id": "standard_view",
+      "name": "Standard View",
+      "description": "A grid layout displaying several services with images and text descriptions.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Nagłówek sekcji",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "section_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Opis",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "services": {
+          "type": "Group",
+          "config": {
+            "label": "Oferta",
+            "repeat": true,
+            "fields": {
+              "service_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Service Image"
+                }
+              },
+              "service_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Service Title"
+                }
+              },
+              "service_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em",
+                  "label": "Service Description"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

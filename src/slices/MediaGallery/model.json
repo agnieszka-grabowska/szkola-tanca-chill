@@ -14,8 +14,10 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
-            "label": "Title"
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "description": {

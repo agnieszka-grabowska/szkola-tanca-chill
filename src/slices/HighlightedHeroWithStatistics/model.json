@@ -11,11 +11,20 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "main_title": {
+        "section_label": {
+          "type": "Text",
+          "config": {
+            "label": "Kolorowy nagłówek",
+            "placeholder": ""
+          }
+        },
+        "section_title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
-            "label": "Main Title"
+            "label": "Nagłówek",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading1,strong,em"
           }
         },
         "description": {
