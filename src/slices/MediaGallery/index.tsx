@@ -6,6 +6,7 @@ import styles from "./MediaGallery.module.css";
 import Button from "@/components/Button/Button";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import image from "@/../public/wavesOpacity.svg";
 
 /**
  * Props for `MediaGallery`.
@@ -21,11 +22,11 @@ const MediaGallery: FC<MediaGalleryProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={styles.mediaGallery}
+      style={{ "--src": `url(${image.src})` } as React.CSSProperties}
     >
       <ConstrainedDiv>
         <StyledPrismicRichText field={slice.primary.title} />
         <StyledPrismicRichText field={slice.primary.description} />
-        <Button field={slice.primary.button} />
         <div className={styles.galleryPreview}>
           {slice.primary.image_gallery.slice(0, 3).map((item, index) => (
             <div key={index} className={styles.imageWrapper}>
@@ -33,6 +34,7 @@ const MediaGallery: FC<MediaGalleryProps> = ({ slice }) => {
             </div>
           ))}
         </div>
+        <Button field={slice.primary.button} variant="secondary" />
       </ConstrainedDiv>
     </section>
   );

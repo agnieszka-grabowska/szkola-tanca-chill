@@ -21,6 +21,27 @@
     transform: translateZ(1px) scale(0.9);
   }
 }
+.mediaGallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  transform: translateY(calc(-100% + 1px)) rotate(180deg);
+  background-image: var(--src);
+}
+
+.mediaGallery::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  transform: translateY(calc(100% - 1px));
+  background-image: var(--src);
+}
 
 .galleryPreview {
   display: grid;
@@ -49,4 +70,9 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.galleryPreview ~ a {
+  margin-top: 60px;
+  margin-inline: auto;
 }
