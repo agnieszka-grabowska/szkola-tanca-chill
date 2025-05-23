@@ -1,0 +1,108 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Congress"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur voluptate veniam consectetur non veniam laboris enim mollit pariatur id dolor deserunt consequat aliquip Lorem. Mollit consequat ad amet sit. Esse qui sit culpa veniam incididunt magna esse sit sunt duis enim."
+						}
+					}
+				]
+			},
+			"harmonogram": {
+				"__TYPE__": "TableContent",
+				"content": [
+					{
+						"key": "622e2bce-ae39-4847-97af-0ce606a3e2a3",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "26d31547-673c-4e25-aba3-af9d13f49e30",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eu occaecat."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "460eb01e-6f2a-4dd4-ba03-54631f5410b5",
+								"type": "tableHeader",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sit proident."
+											}
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"key": "5759a69f-7199-434b-8778-54687888b281",
+						"type": "tableRow",
+						"content": [
+							{
+								"key": "344d166b-b5d3-42af-b377-be9e46f5db65",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Dolor labore ut labore sunt ut."
+											}
+										}
+									]
+								}
+							},
+							{
+								"key": "0834e21f-7f8d-44a8-89d3-a0c5e6cf22bd",
+								"type": "tableCell",
+								"content": {
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Qui cillum non nostrud aliquip deserunt anim sunt."
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

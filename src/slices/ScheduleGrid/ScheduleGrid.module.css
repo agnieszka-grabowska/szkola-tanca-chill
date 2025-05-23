@@ -1,0 +1,68 @@
+.schedule > div > p {
+  max-width: 40rem;
+  margin: 16px auto 48px;
+}
+
+.schedule {
+  margin-block: 120px;
+  text-align: center;
+
+  table {
+    margin: auto;
+
+    background-color: white;
+    box-shadow:
+      0 0 16px #0000001f,
+      0 4px 4px #4b4b4b43;
+    border-radius: 8px;
+    border-collapse: collapse;
+
+    & td {
+      max-width: 16rem;
+    }
+    & tr:not(:first-of-type) {
+      border-top: 1px #ebebeb solid;
+    }
+
+    & td:not(:first-of-type) {
+      border-inline-start: 1px #ebebeb solid;
+    }
+
+    & tr:first-of-type td,
+    td:first-of-type {
+      font-size: 0.875rem;
+      color: #a1a1a1;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 16px 24px;
+    }
+
+    & tr:not(:first-of-type) td:not(:first-of-type) {
+      padding: 8px;
+    }
+    & tr:not(:first-of-type) td:not(:first-of-type) p {
+      padding: 8px 16px;
+      background-color: #f3e1de;
+      border: 2px #ac3726 solid;
+      height: 100%;
+      color: #ac3726;
+      border-radius: 8px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .schedule {
+    & table {
+      & tr:not(:first-of-type) td:not(:first-of-type):not(:empty) {
+        padding: 0px;
+        background-color: #f3e1de;
+      }
+      & tr:not(:first-of-type) td:not(:first-of-type) p {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -3,7 +3,8 @@ import { repositoryName } from "@/prismicio";
 import { lexend } from "@/app/fonts";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import Logo from "@/components/Logo";
+import Logo from "@/svg/Logo";
+import Footer from "@/components/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -18,10 +19,11 @@ export default function RootLayout({
           <div className="parallax-layer layer2">
             <Logo />
           </div>
-          <div className="parallax-layer layer3"></div>
           {children}
+          <Footer />
         </div>
       </body>
+
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );

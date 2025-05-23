@@ -16,22 +16,20 @@
   padding-block: 16px;
 }
 
-.header svg {
+.header > svg {
   max-height: 50px;
   width: auto;
-  color: #3a1719;
+  color: #e5b917;
 }
 
 .navList {
   list-style: none;
   display: flex;
   gap: 40px;
-  color: #7b5359;
 }
 
 .socialMedia {
   list-style: none;
   display: flex;
   gap: 16px;
-  color: #7b5359;
 }

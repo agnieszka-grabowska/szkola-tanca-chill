@@ -1,0 +1,29 @@
+.wrapper {
+  margin-block: 80px;
+}
+.wrapper > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.contentWrapper p {
+  margin-block: 16px 32px;
+}
+
+@media (max-width: 700px) {
+  .wrapper > div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 48px;
+  }
+
+  .wrapper {
+    margin-block: 40px;
+  }
+
+  .wrapper iframe {
+    height: 300px;
+  }
+}

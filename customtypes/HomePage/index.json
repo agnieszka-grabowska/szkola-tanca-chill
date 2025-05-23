@@ -18,6 +18,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_map_form": {
+              "type": "SharedSlice"
+            },
+            "steps_with_intro": {
+              "type": "SharedSlice"
+            },
+            "schedule_grid": {
+              "type": "SharedSlice"
+            },
             "services_grid": {
               "type": "SharedSlice"
             },

@@ -2,27 +2,25 @@ import React from "react";
 import styles from "./Button.module.css";
 import { PrismicNextLink } from "@prismicio/next";
 import { LinkField } from "@prismicio/client";
-import ArrowSVG from "../ArrowSVG";
+import ArrowSVG from "../../svg/ArrowSVG";
 
 type Variant = "primary" | "secondary";
 
 type ClickButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
   field?: never;
   variant?: Variant;
-};
+} & React.ComponentProps<"button">;
 
 type LinkButtonProps = {
   children?: never;
-  onClick?: never;
   field: LinkField;
   variant?: Variant;
 };
 
 type ButtonProps = ClickButtonProps | LinkButtonProps;
 
-export default function Button({ children, onClick, field, variant = "primary" }: ButtonProps) {
+export default function Button({ children, field, variant = "primary", ...rest }: ButtonProps) {
   if (field) {
     return (
       <PrismicNextLink
@@ -35,7 +33,7 @@ export default function Button({ children, onClick, field, variant = "primary" }
   }
 
   return (
-    <button onClick={onClick} className={variant === "primary" ? styles.button : styles.secondary}>
+    <button className={variant === "primary" ? styles.button : styles.secondary} {...rest}>
       {children}
       {variant === "secondary" && <ArrowSVG />}
     </button>

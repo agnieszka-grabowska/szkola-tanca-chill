@@ -1,0 +1,40 @@
+{
+  "type": "SharedSlice",
+  "id": "schedule_grid",
+  "name": "ScheduleGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard variant with heading, description, and a customizable schedule grid supporting multiple columns (days) and rows (times), and styled events.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        },
+        "harmonogram": {
+          "type": "Table",
+          "config": {
+            "label": "Harmonogram"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

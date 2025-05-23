@@ -1,0 +1,32 @@
+{
+  "type": "SharedSlice",
+  "id": "contact_map_form",
+  "name": "ContactMapForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard layout with left-side map and right-side contact form with title, description, form fields, and button.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Description"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

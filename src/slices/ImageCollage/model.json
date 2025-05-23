@@ -1,0 +1,32 @@
+{
+  "type": "SharedSlice",
+  "id": "image_collage",
+  "name": "ImageCollage",
+  "variations": [
+    {
+      "id": "multi_image_grid",
+      "name": "Multi-Image Grid",
+      "description": "Displays a configurable group of images in a grid or collage layout, supporting optional captions per image.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "images": {
+          "type": "Group",
+          "config": {
+            "label": "Images",
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

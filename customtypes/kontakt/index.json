@@ -1,0 +1,32 @@
+{
+  "format": "custom",
+  "id": "kontakt",
+  "label": "kontakt",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "address": {
+        "type": "Text",
+        "config": {
+          "label": "Adres",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Numer telefonu",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

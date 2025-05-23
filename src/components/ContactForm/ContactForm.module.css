@@ -1,0 +1,26 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contactForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 16px;
+  border-radius: 8px;
+  border: #e4e4e4 1px solid;
+}
+
+.contactForm textarea {
+  resize: none;
+}
+
+.contactForm button {
+  width: auto;
+}

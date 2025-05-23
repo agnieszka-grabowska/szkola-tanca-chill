@@ -1,12 +1,13 @@
 "use client";
 import { FC } from "react";
-import { Content } from "@prismicio/client";
+import { Content, ImageField, RichTextField, TitleField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import styles from "./ServicesGrid.module.css";
 import Button from "@/components/Button/Button";
+import { BlobSVG } from "@/svg/BlobSVG";
 
 /**
  * Props for `ServicesGrid`.
@@ -30,18 +31,24 @@ const ServicesGrid: FC<ServicesGridProps> = ({ slice }) => {
         </div>
         <div className={styles.services}>
           {slice.primary.services.map((item, index) => (
-            <div key={index} className={styles.serviceItem}>
-              <div className={styles.imageWrapper}>
-                <PrismicNextImage field={item.service_image} />
-              </div>
-
-              <div className={styles.textWrapper}>
-                <PrismicRichText field={item.service_title} />
-                <PrismicRichText field={item.service_description} />
-                <Button variant="secondary" onClick={() => {}}>
-                  Czytaj więcej
-                </Button>
-              </div>
+            <div className={styles.serviceItem} key={index}>
+              {index % 2 !== 0 ? (
+                <>
+                  <ServiceItemText
+                    title={item.service_title}
+                    description={item.service_description}
+                  />
+                  <ServiceItemImage item={item.service_image} />
+                </>
+              ) : (
+                <>
+                  <ServiceItemImage item={item.service_image} />
+                  <ServiceItemText
+                    title={item.service_title}
+                    description={item.service_description}
+                  />
+                </>
+              )}
             </div>
           ))}
         </div>
@@ -51,3 +58,31 @@ const ServicesGrid: FC<ServicesGridProps> = ({ slice }) => {
 };
 
 export default ServicesGrid;
+
+function ServiceItemText({
+  title,
+  description,
+}: {
+  title: TitleField;
+  description: RichTextField;
+}) {
+  return (
+    <div className={styles.textWrapper}>
+      <PrismicRichText field={title} />
+      <div className={styles.tag}>Dla zaawansowanych i początkujących</div>
+      <PrismicRichText field={description} />
+      <Button variant="secondary" onClick={() => {}}>
+        Czytaj więcej
+      </Button>
+    </div>
+  );
+}
+
+function ServiceItemImage({ item }: { item: ImageField }) {
+  return (
+    <div className={styles.imageWrapper}>
+      <BlobSVG className={styles.blob} />
+      <PrismicNextImage field={item} />
+    </div>
+  );
+}

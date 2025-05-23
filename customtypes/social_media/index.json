@@ -6,10 +6,10 @@
   "status": true,
   "json": {
     "Main": {
-      "social_media": {
+      "links": {
         "type": "Group",
         "config": {
-          "label": "Media Społecznościowe",
+          "label": "Linki",
           "repeat": true,
           "fields": {
             "name": {
@@ -21,14 +21,6 @@
                 "allowTargetBlank": true,
                 "allowText": true,
                 "repeat": false
-              }
-            },
-            "icon": {
-              "type": "Select",
-              "config": {
-                "label": "Ikonka",
-                "placeholder": "",
-                "options": ["instagram", "facebook"]
               }
             }
           }

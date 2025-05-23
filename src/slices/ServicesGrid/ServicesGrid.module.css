@@ -1,6 +1,4 @@
 .sectionWrapper {
-  isolation: isolate;
-  background-color: #ffcb95;
   padding-top: 400px;
   margin-top: -400px;
 }
@@ -14,10 +12,10 @@
 
 .services {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
   --shadow-color: 31deg 55% 49%;
   --shadow-elevation-low:
@@ -41,45 +39,58 @@
 }
 
 .serviceItem {
-  aspect-ratio: 4/5;
-  border-radius: 16px;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  box-shadow: var(--shadow-elevation-medium);
-  height: 100%;
-  background-color: #ffffff3e;
-
-  & p {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  position: relative;
 }
 
 .imageWrapper {
-  overflow: hidden;
+  flex: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
 }
-.imageWrapper img {
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
+
+.blob {
+  position: absolute;
+  z-index: -1;
+  color: #ac3726;
+  max-height: 90%;
+}
+
+.serviceItem:nth-child(2n) .blob {
+  color: #e5b917;
+}
+
+.imageWrapper img:not(.blob) {
+  object-fit: contain;
+  max-height: 80vh;
 }
 
 .textWrapper {
+  flex: 50%;
   padding: 16px;
   & h3 {
     line-height: 1.2;
-    padding-bottom: 8px;
     color: #3a1719;
+    font-size: 3rem;
   }
   & p {
     color: #7b5359;
+    line-height: 1.8;
   }
   & button {
-    margin-left: auto;
     margin-top: 20px;
+    margin-left: -8px;
   }
+}
+
+.tag {
+  color: #d80020;
+  background-color: #fad5c8;
+  border-radius: 100px;
+  padding: 4px 16px;
+  width: max-content;
+  margin-block: 16px 24px;
 }

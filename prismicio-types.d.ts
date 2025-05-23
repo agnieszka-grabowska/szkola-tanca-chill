@@ -5,6 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomePageDocumentDataSlicesSlice =
+  | ContactMapFormSlice
+  | StepsWithIntroSlice
+  | ScheduleGridSlice
   | ServicesGridSlice
   | MediaGallerySlice
   | HighlightedHeroWithStatisticsSlice;
@@ -83,7 +86,61 @@ export type HomePageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+/**
+ * Content for kontakt documents
+ */
+interface KontaktDocumentData {
+  /**
+   * Adres field in *kontakt*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: kontakt.address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Email field in *kontakt*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: kontakt.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Numer telefonu field in *kontakt*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: kontakt.phone_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+}
+
+/**
+ * kontakt document from Prismic
+ *
+ * - **API ID**: `kontakt`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type KontaktDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<KontaktDocumentData>,
+    "kontakt",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice = ImageCollageSlice | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -156,28 +213,18 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
- * Item in *Media Społecznościowe → Media Społecznościowe*
+ * Item in *Media Społecznościowe → Linki*
  */
-export interface SocialMediaDocumentDataSocialMediaItem {
+export interface SocialMediaDocumentDataLinksItem {
   /**
-   * Nazwa field in *Media Społecznościowe → Media Społecznościowe*
+   * Nazwa field in *Media Społecznościowe → Linki*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: social_media.social_media[].name
+   * - **API ID Path**: social_media.links[].name
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   name: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-
-  /**
-   * Ikonka field in *Media Społecznościowe → Media Społecznościowe*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: social_media.social_media[].icon
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  icon: prismic.SelectField<"instagram" | "facebook">;
 }
 
 /**
@@ -185,17 +232,15 @@ export interface SocialMediaDocumentDataSocialMediaItem {
  */
 interface SocialMediaDocumentData {
   /**
-   * Media Społecznościowe field in *Media Społecznościowe*
+   * Linki field in *Media Społecznościowe*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: social_media.social_media[]
+   * - **API ID Path**: social_media.links[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  social_media: prismic.GroupField<
-    Simplify<SocialMediaDocumentDataSocialMediaItem>
-  >;
+  links: prismic.GroupField<Simplify<SocialMediaDocumentDataLinksItem>>;
 }
 
 /**
@@ -216,8 +261,64 @@ export type SocialMediaDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomePageDocument
+  | KontaktDocument
   | PageDocument
   | SocialMediaDocument;
+
+/**
+ * Primary content in *ContactMapForm → Default → Primary*
+ */
+export interface ContactMapFormSliceDefaultPrimary {
+  /**
+   * Title field in *ContactMapForm → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_map_form.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *ContactMapForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_map_form.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContactMapForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard layout with left-side map and right-side contact form with title, description, form fields, and button.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactMapFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactMapFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactMapForm*
+ */
+type ContactMapFormSliceVariation = ContactMapFormSliceDefault;
+
+/**
+ * ContactMapForm Shared Slice
+ *
+ * - **API ID**: `contact_map_form`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactMapFormSlice = prismic.SharedSlice<
+  "contact_map_form",
+  ContactMapFormSliceVariation
+>;
 
 /**
  * Item in *HighlightedHeroWithStatistics → Default → Primary → Statistics*
@@ -341,6 +442,68 @@ type HighlightedHeroWithStatisticsSliceVariation =
 export type HighlightedHeroWithStatisticsSlice = prismic.SharedSlice<
   "highlighted_hero_with_statistics",
   HighlightedHeroWithStatisticsSliceVariation
+>;
+
+/**
+ * Item in *ImageCollage → Multi-Image Grid → Primary → Images*
+ */
+export interface ImageCollageSliceMultiImageGridPrimaryImagesItem {
+  /**
+   * Image field in *ImageCollage → Multi-Image Grid → Primary → Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_collage.multi_image_grid.primary.images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ImageCollage → Multi-Image Grid → Primary*
+ */
+export interface ImageCollageSliceMultiImageGridPrimary {
+  /**
+   * Images field in *ImageCollage → Multi-Image Grid → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_collage.multi_image_grid.primary.images[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  images: prismic.GroupField<
+    Simplify<ImageCollageSliceMultiImageGridPrimaryImagesItem>
+  >;
+}
+
+/**
+ * Multi-Image Grid variation for ImageCollage Slice
+ *
+ * - **API ID**: `multi_image_grid`
+ * - **Description**: Displays a configurable group of images in a grid or collage layout, supporting optional captions per image.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageCollageSliceMultiImageGrid = prismic.SharedSliceVariation<
+  "multi_image_grid",
+  Simplify<ImageCollageSliceMultiImageGridPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageCollage*
+ */
+type ImageCollageSliceVariation = ImageCollageSliceMultiImageGrid;
+
+/**
+ * ImageCollage Shared Slice
+ *
+ * - **API ID**: `image_collage`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ImageCollageSlice = prismic.SharedSlice<
+  "image_collage",
+  ImageCollageSliceVariation
 >;
 
 /**
@@ -481,6 +644,71 @@ export type RichTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ScheduleGrid → Default → Primary*
+ */
+export interface ScheduleGridSliceDefaultPrimary {
+  /**
+   * Title field in *ScheduleGrid → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schedule_grid.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *ScheduleGrid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schedule_grid.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Harmonogram field in *ScheduleGrid → Default → Primary*
+   *
+   * - **Field Type**: Table
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schedule_grid.default.primary.harmonogram
+   * - **Documentation**: https://prismic.io/docs/field#table
+   */
+  harmonogram: prismic.TableField;
+}
+
+/**
+ * Default variation for ScheduleGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Standard variant with heading, description, and a customizable schedule grid supporting multiple columns (days) and rows (times), and styled events.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ScheduleGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ScheduleGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ScheduleGrid*
+ */
+type ScheduleGridSliceVariation = ScheduleGridSliceDefault;
+
+/**
+ * ScheduleGrid Shared Slice
+ *
+ * - **API ID**: `schedule_grid`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ScheduleGridSlice = prismic.SharedSlice<
+  "schedule_grid",
+  ScheduleGridSliceVariation
+>;
+
+/**
  * Item in *ServicesGrid → Standard View → Primary → Oferta*
  */
 export interface ServicesGridSliceStandardViewPrimaryServicesItem {
@@ -582,6 +810,98 @@ export type ServicesGridSlice = prismic.SharedSlice<
   ServicesGridSliceVariation
 >;
 
+/**
+ * Item in *StepsWithIntro → Default → Primary → Steps*
+ */
+export interface StepsWithIntroSliceDefaultPrimaryStepsItem {
+  /**
+   * Step Title field in *StepsWithIntro → Default → Primary → Steps*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps_with_intro.default.primary.steps[].step_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_title: prismic.TitleField;
+
+  /**
+   * Step Description field in *StepsWithIntro → Default → Primary → Steps*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps_with_intro.default.primary.steps[].step_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  step_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *StepsWithIntro → Default → Primary*
+ */
+export interface StepsWithIntroSliceDefaultPrimary {
+  /**
+   * Title field in *StepsWithIntro → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps_with_intro.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *StepsWithIntro → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps_with_intro.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Steps field in *StepsWithIntro → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps_with_intro.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<
+    Simplify<StepsWithIntroSliceDefaultPrimaryStepsItem>
+  >;
+}
+
+/**
+ * Default variation for StepsWithIntro Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Basic variant with an intro followed by a horizontal step sequence.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsWithIntroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StepsWithIntroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *StepsWithIntro*
+ */
+type StepsWithIntroSliceVariation = StepsWithIntroSliceDefault;
+
+/**
+ * StepsWithIntro Shared Slice
+ *
+ * - **API ID**: `steps_with_intro`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsWithIntroSlice = prismic.SharedSlice<
+  "steps_with_intro",
+  StepsWithIntroSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -606,18 +926,29 @@ declare module "@prismicio/client" {
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
+      KontaktDocument,
+      KontaktDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       SocialMediaDocument,
       SocialMediaDocumentData,
-      SocialMediaDocumentDataSocialMediaItem,
+      SocialMediaDocumentDataLinksItem,
       AllDocumentTypes,
+      ContactMapFormSlice,
+      ContactMapFormSliceDefaultPrimary,
+      ContactMapFormSliceVariation,
+      ContactMapFormSliceDefault,
       HighlightedHeroWithStatisticsSlice,
       HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem,
       HighlightedHeroWithStatisticsSliceDefaultPrimary,
       HighlightedHeroWithStatisticsSliceVariation,
       HighlightedHeroWithStatisticsSliceDefault,
+      ImageCollageSlice,
+      ImageCollageSliceMultiImageGridPrimaryImagesItem,
+      ImageCollageSliceMultiImageGridPrimary,
+      ImageCollageSliceVariation,
+      ImageCollageSliceMultiImageGrid,
       MediaGallerySlice,
       MediaGallerySliceGridGalleryPrimaryImageGalleryItem,
       MediaGallerySliceGridGalleryPrimary,
@@ -627,11 +958,20 @@ declare module "@prismicio/client" {
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
+      ScheduleGridSlice,
+      ScheduleGridSliceDefaultPrimary,
+      ScheduleGridSliceVariation,
+      ScheduleGridSliceDefault,
       ServicesGridSlice,
       ServicesGridSliceStandardViewPrimaryServicesItem,
       ServicesGridSliceStandardViewPrimary,
       ServicesGridSliceVariation,
       ServicesGridSliceStandardView,
+      StepsWithIntroSlice,
+      StepsWithIntroSliceDefaultPrimaryStepsItem,
+      StepsWithIntroSliceDefaultPrimary,
+      StepsWithIntroSliceVariation,
+      StepsWithIntroSliceDefault,
     };
   }
 }
