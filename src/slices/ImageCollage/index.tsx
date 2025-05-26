@@ -1,6 +1,10 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import styles from "./styles.module.css";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import Heading from "@/components/Heading/Heading";
 
 /**
  * Props for `ImageCollage`.
@@ -15,9 +19,18 @@ const ImageCollage: FC<ImageCollageProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className={styles.wrapper}
     >
-      Placeholder component for image_collage (variation: {slice.variation})
-      Slices
+      <ConstrainedDiv>
+        <Heading>{slice.primary.header}</Heading>
+        <div className={styles.imagesGrid}>
+          {slice.primary.images.map((item) => (
+            <div className={styles.imageWrapper} key={item.image.id}>
+              <PrismicNextImage field={item.image} />
+            </div>
+          ))}
+        </div>
+      </ConstrainedDiv>
     </section>
   );
 };

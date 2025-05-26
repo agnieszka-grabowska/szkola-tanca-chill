@@ -464,6 +464,16 @@ export interface ImageCollageSliceMultiImageGridPrimaryImagesItem {
  */
 export interface ImageCollageSliceMultiImageGridPrimary {
   /**
+   * Header field in *ImageCollage → Multi-Image Grid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_collage.multi_image_grid.primary.header
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  header: prismic.KeyTextField;
+
+  /**
    * Images field in *ImageCollage → Multi-Image Grid → Primary*
    *
    * - **Field Type**: Group

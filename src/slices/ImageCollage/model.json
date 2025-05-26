@@ -11,6 +11,13 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "header": {
+          "type": "Text",
+          "config": {
+            "label": "Header",
+            "placeholder": ""
+          }
+        },
         "images": {
           "type": "Group",
           "config": {

@@ -22,10 +22,7 @@ export default async function Footer() {
             <div className={styles.logo}>
               <Logo />
             </div>
-            <p>
-              Nasza szkoła tańca to miejsce, gdzie pasja spotyka profesjonalizm. Tworzymy przestrzeń
-              dla każdego
-            </p>
+            <p>Nasza szkoła tańca to miejsce, gdzie pasja spotyka zabawę.</p>
           </div>
           <div>
             <h2>Social Media</h2>
@@ -40,24 +37,30 @@ export default async function Footer() {
           <div>
             <h2>Kontakt</h2>
             <ul>
-              <li>
-                <FiMapPin />
-                {contactData.address}
-              </li>
-              <li>
-                <a href={`mailto:${contactData.email}`}>
-                  <div style={{ marginTop: "3px" }}>
-                    <FiMail />
-                  </div>
-                  {contactData.email}
-                </a>
-              </li>
-              <li>
-                <a href={`tel:${contactData.phone_number}`}>
-                  <FiPhone />
-                  {contactData.phone_number}
-                </a>
-              </li>
+              {contactData.address && (
+                <li>
+                  <FiMapPin />
+                  {contactData.address}
+                </li>
+              )}
+              {contactData.email && (
+                <li>
+                  <a href={`mailto:${contactData.email}`}>
+                    <div style={{ marginTop: "3px" }}>
+                      <FiMail />
+                    </div>
+                    {contactData.email}
+                  </a>
+                </li>
+              )}
+              {contactData.phone_number && (
+                <li>
+                  <a href={`tel:${contactData.phone_number}`}>
+                    <FiPhone />
+                    {contactData.phone_number}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

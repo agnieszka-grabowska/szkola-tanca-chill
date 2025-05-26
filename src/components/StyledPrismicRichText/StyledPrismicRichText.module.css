@@ -5,13 +5,6 @@
   text-shadow: 0px 11px 40px #3a171948;
 }
 
-.h2 {
-  font-size: 3.25rem;
-  font-size: clamp(2rem, 4vw + 4px, 3.25rem);
-  color: #3a1719;
-  line-height: 1.2;
-}
-
 .p {
   color: #7b5359;
   line-height: 1.8;
