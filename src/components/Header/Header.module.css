@@ -16,10 +16,16 @@
   padding-block: 16px;
 }
 
-.header > svg {
+.header > a > svg {
   max-height: 50px;
   width: auto;
   color: #e5b917;
+  transition: transform 0.2s ease-out;
+}
+
+.header > a > svg:hover {
+  transition: transform 0.1s ease-out;
+  transform: rotate(-2deg) scale(0.95);
 }
 
 .navList {

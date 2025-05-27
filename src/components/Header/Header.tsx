@@ -6,6 +6,7 @@ import Logo from "../../svg/Logo";
 import { createClient } from "@/prismicio";
 import { notFound } from "next/navigation";
 import { PrismicNextLink } from "@prismicio/next";
+import Link from "next/link";
 
 export default async function Header() {
   const client = createClient();
@@ -15,7 +16,9 @@ export default async function Header() {
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.header}>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <nav>
           <ol className={styles.navList}>
             <li>O nas</li>
