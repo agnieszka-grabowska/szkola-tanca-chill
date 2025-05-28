@@ -1,5 +1,5 @@
 .section {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 45% 55%;
   transform-style: preserve-3d;
@@ -9,11 +9,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transform: translateZ(1px) scale(0.95);
+  transform: translateZ(1px) scale(0.9);
 
   & h1 {
     margin-top: 16px;
     margin-bottom: 16px;
+    max-width: 40rem;
   }
 
   & p:nth-of-type(1) {
@@ -24,7 +25,29 @@
 
 .imageWrapper {
   isolation: isolate;
-  transform: scale(1.2);
   margin-top: 120px;
   overflow: hidden;
+}
+
+.imageWrapper img {
+  place-self: end;
+}
+
+@media (max-width: 600px) {
+  .imageWrapper {
+    display: none;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .textWrapper {
+    text-align: center;
+    align-items: center;
+    padding: 80px 16px 200px;
+
+    & h1 {
+      font-size: 2rem;
+    }
+  }
 }
