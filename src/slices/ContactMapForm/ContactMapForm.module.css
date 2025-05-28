@@ -1,5 +1,6 @@
 .wrapper {
   margin-block: 80px;
+  scroll-margin: 100px;
 }
 .wrapper > div {
   display: grid;

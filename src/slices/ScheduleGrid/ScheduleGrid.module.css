@@ -6,6 +6,7 @@
 .schedule {
   margin-block: 120px;
   text-align: center;
+  scroll-margin: 120px;
 
   table {
     margin: auto;

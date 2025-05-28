@@ -23,6 +23,7 @@ const ServicesGrid: FC<ServicesGridProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={styles.sectionWrapper}
+      id="oferta"
     >
       <ConstrainedDiv>
         <div className={styles.title}>

@@ -34,6 +34,10 @@
   gap: 40px;
 }
 
+.navList a {
+  text-decoration: none;
+}
+
 .socialMedia {
   list-style: none;
   display: flex;

@@ -21,11 +21,21 @@ export default async function Header() {
         </Link>
         <nav>
           <ol className={styles.navList}>
-            <li>O nas</li>
-            <li>Oferta</li>
-            <li>Harmonogram</li>
-            <li>Galeria</li>
-            <li>Kontakt</li>
+            <li>
+              <Link href="/o-mnie">O mnie</Link>
+            </li>
+            <li>
+              <Link href="/#oferta">Oferta</Link>
+            </li>
+            <li>
+              <Link href="/#harmonogram">Harmonogram</Link>
+            </li>
+            <li>
+              <Link href="/galeria">Galeria</Link>
+            </li>
+            <li>
+              <Link href="/#contact">Kontakt</Link>
+            </li>
           </ol>
         </nav>
         <ul className={styles.socialMedia}>

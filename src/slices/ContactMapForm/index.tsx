@@ -20,6 +20,7 @@ const ContactMapForm: FC<ContactMapFormProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={styles.wrapper}
+      id="contact"
     >
       <ConstrainedDiv>
         <iframe

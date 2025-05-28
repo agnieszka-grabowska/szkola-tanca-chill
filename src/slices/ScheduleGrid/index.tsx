@@ -19,6 +19,7 @@ const ScheduleGrid: FC<ScheduleGridProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={styles.schedule}
+      id="harmonogram"
     >
       <ConstrainedDiv>
         <StyledPrismicRichText field={slice.primary.title} />

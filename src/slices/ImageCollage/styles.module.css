@@ -1,5 +1,9 @@
 .wrapper {
-  margin-block: 200px 80px;
+  padding-block-start: 200px;
+}
+
+.wrapper:last-of-type {
+  padding-block-end: 80px;
 }
 
 .wrapper h2 {
