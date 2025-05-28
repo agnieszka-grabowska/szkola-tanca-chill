@@ -1,0 +1,34 @@
+.wrapper {
+  margin-block: 140px 70px;
+}
+
+.wrapper > div {
+  display: flex;
+  flex-direction: var(--flex-direction);
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 100%;
+}
+
+.contentWrapper {
+  flex: 1;
+  & p {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper > div {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .imageWrapper,
+  .imageWrapper img {
+    width: 100%;
+  }
+}

@@ -140,7 +140,11 @@ export type KontaktDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = ImageCollageSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+  | ContentImageSplitSlice
+  | SideBySideImageTextSlice
+  | ImageCollageSlice
+  | RichTextSlice;
 
 /**
  * Content for Page documents
@@ -318,6 +322,121 @@ type ContactMapFormSliceVariation = ContactMapFormSliceDefault;
 export type ContactMapFormSlice = prismic.SharedSlice<
   "contact_map_form",
   ContactMapFormSliceVariation
+>;
+
+/**
+ * Primary content in *ContentImageSplit → image_right → Primary*
+ */
+export interface ContentImageSplitSliceImageRightPrimary {
+  /**
+   * Heading field in *ContentImageSplit → image_right → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageRight.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Content field in *ContentImageSplit → image_right → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageRight.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Side Image field in *ContentImageSplit → image_right → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageRight.primary.side_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  side_image: prismic.ImageField<never>;
+}
+
+/**
+ * image_right variation for ContentImageSplit Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Displays structured text content aligned on the left and an image on the right. Ideal for informative or story sections that benefit from paired visuals.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentImageSplitSliceImageRight = prismic.SharedSliceVariation<
+  "imageRight",
+  Simplify<ContentImageSplitSliceImageRightPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ContentImageSplit → image_left → Primary*
+ */
+export interface ContentImageSplitSliceImageLeftPrimary {
+  /**
+   * Heading field in *ContentImageSplit → image_left → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageLeft.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Content field in *ContentImageSplit → image_left → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageLeft.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Side Image field in *ContentImageSplit → image_left → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_image_split.imageLeft.primary.side_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  side_image: prismic.ImageField<never>;
+}
+
+/**
+ * image_left variation for ContentImageSplit Slice
+ *
+ * - **API ID**: `imageLeft`
+ * - **Description**: Displays structured text content aligned on the left and an image on the right. Ideal for informative or story sections that benefit from paired visuals.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentImageSplitSliceImageLeft = prismic.SharedSliceVariation<
+  "imageLeft",
+  Simplify<ContentImageSplitSliceImageLeftPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentImageSplit*
+ */
+type ContentImageSplitSliceVariation =
+  | ContentImageSplitSliceImageRight
+  | ContentImageSplitSliceImageLeft;
+
+/**
+ * ContentImageSplit Shared Slice
+ *
+ * - **API ID**: `content_image_split`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentImageSplitSlice = prismic.SharedSlice<
+  "content_image_split",
+  ContentImageSplitSliceVariation
 >;
 
 /**
@@ -821,6 +940,83 @@ export type ServicesGridSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SideBySideImageText → Image(s) with Heading and Text → Primary*
+ */
+export interface SideBySideImageTextSliceImageTextWithHeadingPrimary {
+  /**
+   * Heading field in *SideBySideImageText → Image(s) with Heading and Text → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_image_text.image_text_with_heading.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Body field in *SideBySideImageText → Image(s) with Heading and Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_image_text.image_text_with_heading.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Back image field in *SideBySideImageText → Image(s) with Heading and Text → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_image_text.image_text_with_heading.primary.back_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  back_image: prismic.ImageField<never>;
+
+  /**
+   * Front image field in *SideBySideImageText → Image(s) with Heading and Text → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: side_by_side_image_text.image_text_with_heading.primary.front_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  front_image: prismic.ImageField<never>;
+}
+
+/**
+ * Image(s) with Heading and Text variation for SideBySideImageText Slice
+ *
+ * - **API ID**: `image_text_with_heading`
+ * - **Description**: Displays one or more images side-by-side with a heading and body text, allowing layouts that combine visual elements with textual information for emphasis or introduction.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SideBySideImageTextSliceImageTextWithHeading =
+  prismic.SharedSliceVariation<
+    "image_text_with_heading",
+    Simplify<SideBySideImageTextSliceImageTextWithHeadingPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *SideBySideImageText*
+ */
+type SideBySideImageTextSliceVariation =
+  SideBySideImageTextSliceImageTextWithHeading;
+
+/**
+ * SideBySideImageText Shared Slice
+ *
+ * - **API ID**: `side_by_side_image_text`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SideBySideImageTextSlice = prismic.SharedSlice<
+  "side_by_side_image_text",
+  SideBySideImageTextSliceVariation
+>;
+
+/**
  * Item in *StepsWithIntro → Default → Primary → Steps*
  */
 export interface StepsWithIntroSliceDefaultPrimaryStepsItem {
@@ -949,6 +1145,12 @@ declare module "@prismicio/client" {
       ContactMapFormSliceDefaultPrimary,
       ContactMapFormSliceVariation,
       ContactMapFormSliceDefault,
+      ContentImageSplitSlice,
+      ContentImageSplitSliceImageRightPrimary,
+      ContentImageSplitSliceImageLeftPrimary,
+      ContentImageSplitSliceVariation,
+      ContentImageSplitSliceImageRight,
+      ContentImageSplitSliceImageLeft,
       HighlightedHeroWithStatisticsSlice,
       HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem,
       HighlightedHeroWithStatisticsSliceDefaultPrimary,
@@ -977,6 +1179,10 @@ declare module "@prismicio/client" {
       ServicesGridSliceStandardViewPrimary,
       ServicesGridSliceVariation,
       ServicesGridSliceStandardView,
+      SideBySideImageTextSlice,
+      SideBySideImageTextSliceImageTextWithHeadingPrimary,
+      SideBySideImageTextSliceVariation,
+      SideBySideImageTextSliceImageTextWithHeading,
       StepsWithIntroSlice,
       StepsWithIntroSliceDefaultPrimaryStepsItem,
       StepsWithIntroSliceDefaultPrimary,

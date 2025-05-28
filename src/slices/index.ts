@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   contact_map_form: dynamic(() => import("./ContactMapForm")),
+  content_image_split: dynamic(() => import("./ContentImageSplit")),
   highlighted_hero_with_statistics: dynamic(
     () => import("./HighlightedHeroWithStatistics"),
   ),
@@ -12,5 +13,6 @@ export const components = {
   rich_text: dynamic(() => import("./RichText")),
   schedule_grid: dynamic(() => import("./ScheduleGrid")),
   services_grid: dynamic(() => import("./ServicesGrid")),
+  side_by_side_image_text: dynamic(() => import("./SideBySideImageText")),
   steps_with_intro: dynamic(() => import("./StepsWithIntro")),
 };

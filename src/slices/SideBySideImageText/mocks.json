@@ -1,0 +1,81 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "image_text_with_heading",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Steep"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tortor eros, posuere in luctus sit amet, tincidunt et eros. Suspendisse sagittis ultrices eros, non pharetra nibh luctus id. Quisque sit amet malesuada nunc. Pellentesque fringilla elit mollis augue vehicula commodo. Etiam id mauris nec odio convallis finibus at at nunc. Nulla facilisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In sollicitudin suscipit tortor, a tristique nisi tristique quis. Praesent quis accumsan nibh, quis pellentesque diam. Sed faucibus eget ligula non vestibulum. Sed maximus purus massa, at blandit dui rutrum lobortis. Aliquam egestas vitae ex quis ullamcorper. Fusce egestas rhoncus pellentesque. Duis vitae convallis lacus. Maecenas a lectus nulla. Vestibulum non est sem.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"back_image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDgzNDc0MzV8MA&ixlib=rb-4.1.0&q=85",
+				"alt": "sliced orange fruit on white ceramic plate",
+				"origin": {
+					"id": "pCjw_ygKCv0",
+					"url": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHw5fHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3NDgzNDc0MzV8MA&ixlib=rb-4.1.0&q=85",
+					"width": 3648,
+					"height": 5472
+				},
+				"width": 3648,
+				"height": 5472,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"front_image": {
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1664575602554-2087b04935a5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHx3b21hbnxlbnwwfHx8fDE3NDgzMzE0OTN8MA&ixlib=rb-4.1.0&q=85",
+				"alt": "a person holding a laptop",
+				"origin": {
+					"id": "7mBictB_urk",
+					"url": "https://images.unsplash.com/photo-1664575602554-2087b04935a5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxfHx3b21hbnxlbnwwfHx8fDE3NDgzMzE0OTN8MA&ixlib=rb-4.1.0&q=85",
+					"width": 4480,
+					"height": 6720
+				},
+				"width": 4480,
+				"height": 6720,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

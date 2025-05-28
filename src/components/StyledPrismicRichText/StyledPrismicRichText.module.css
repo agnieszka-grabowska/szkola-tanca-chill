@@ -1,5 +1,5 @@
 .h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.25rem, 4vw + 4px, 3.5rem);
   color: #3a1719;
   line-height: 1.1;
   text-shadow: 0px 11px 40px #3a171948;

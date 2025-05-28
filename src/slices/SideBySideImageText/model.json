@@ -1,0 +1,48 @@
+{
+  "type": "SharedSlice",
+  "id": "side_by_side_image_text",
+  "name": "SideBySideImageText",
+  "variations": [
+    {
+      "id": "image_text_with_heading",
+      "name": "Image(s) with Heading and Text",
+      "description": "Displays one or more images side-by-side with a heading and body text, allowing layouts that combine visual elements with textual information for emphasis or introduction.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Heading"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "multi": "paragraph,strong,em,hyperlink",
+            "label": "Body"
+          }
+        },
+        "back_image": {
+          "type": "Image",
+          "config": {
+            "label": "Back image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "front_image": {
+          "type": "Image",
+          "config": {
+            "label": "Front image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
