@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Content, ImageField, RichTextField, TitleField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import styles from "./ServicesGrid.module.css";
 import Button from "@/components/Button/Button";

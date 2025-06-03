@@ -3,7 +3,7 @@ import { Content } from "@prismicio/client";
 import { PrismicTable, SliceComponentProps } from "@prismicio/react";
 import styles from "./ScheduleGrid.module.css";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 
 /**
  * Props for `ScheduleGrid`.

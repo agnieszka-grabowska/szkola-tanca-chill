@@ -3,7 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import styles from "./styles.module.css";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import Heading from "@/components/Heading/Heading";
 
 /**

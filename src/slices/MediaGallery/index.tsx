@@ -5,7 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import styles from "./MediaGallery.module.css";
 import Button from "@/components/Button/Button";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import image from "@/../public/wavesOpacity.svg";
 
 /**

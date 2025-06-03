@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import styles from "./ContactMapForm.module.css";
 import ContactForm from "@/components/ContactForm/ContactForm";

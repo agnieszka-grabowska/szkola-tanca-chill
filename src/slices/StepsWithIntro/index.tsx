@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import styles from "./StepsWithIntro.module.css";
 import image from "@/../public/chevrons-right.svg";

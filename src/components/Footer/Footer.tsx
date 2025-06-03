@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../svg/Logo";
 import styles from "./Footer.module.css";
-import ConstrainedDiv from "../ConstrainedDiv/ConstrainedDiv.module";
+import ConstrainedDiv from "../ConstrainedDiv/ConstrainedDiv";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { createClient } from "@/prismicio";
 import { notFound } from "next/navigation";
