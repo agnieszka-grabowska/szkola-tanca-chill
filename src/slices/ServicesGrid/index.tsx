@@ -72,9 +72,6 @@ function ServiceItemText({
       <PrismicRichText field={title} />
       <div className={styles.tag}>Dla zaawansowanych i początkujących</div>
       <PrismicRichText field={description} />
-      <Button variant="secondary" onClick={() => {}}>
-        Czytaj więcej
-      </Button>
     </div>
   );
 }

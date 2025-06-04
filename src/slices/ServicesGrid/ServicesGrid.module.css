@@ -94,3 +94,29 @@
   width: max-content;
   margin-block: 16px 24px;
 }
+
+@media (max-width: 700px) {
+  .services {
+    gap: 16px;
+  }
+  .imageWrapper {
+    display: none;
+  }
+
+  .serviceItem {
+    border-radius: 16px;
+    background-color: #fcefc7;
+  }
+  .textWrapper {
+    & h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .tag {
+    background-color: revert;
+    padding: 0;
+    width: auto;
+    margin-block: 8px 16px;
+  }
+}
