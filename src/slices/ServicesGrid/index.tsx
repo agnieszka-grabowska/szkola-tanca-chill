@@ -6,7 +6,6 @@ import { PrismicNextImage } from "@prismicio/next";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import styles from "./ServicesGrid.module.css";
-import Button from "@/components/Button/Button";
 import { BlobSVG } from "@/svg/BlobSVG";
 
 /**

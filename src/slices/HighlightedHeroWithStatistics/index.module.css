@@ -27,6 +27,8 @@
   isolation: isolate;
   margin-top: 120px;
   overflow: hidden;
+  justify-self: end;
+  max-height: 100vh;
 }
 
 .imageWrapper img {
