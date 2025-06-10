@@ -4,7 +4,7 @@
   gap: 24px;
 }
 
-.contactForm label {
+.label {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -23,4 +23,10 @@
 
 .contactForm button {
   width: auto;
+}
+
+.error {
+  color: #ac3726;
+  border: #ac3726 1px solid;
+  padding: 10px;
 }

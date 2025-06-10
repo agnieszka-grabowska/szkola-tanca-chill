@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Logo from "@/svg/Logo";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
   children,
@@ -22,6 +23,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <Toaster position="bottom-center" />
       </body>
 
       <PrismicPreview repositoryName={repositoryName} />
