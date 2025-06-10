@@ -65,7 +65,11 @@ export default async function Footer() {
           </div>
         </div>
         <div className={styles.copyright}>
-          <p> © 2025 Szkoła Tańca Chill | Made with ❤️ by Agnieszka Grabowska</p>
+          <p>
+            {" "}
+            © 2025 Szkoła Tańca Chill | Made by{" "}
+            <a href="https://agnieszkagrabowska.vercel.app">Agnieszka Grabowska</a>
+          </p>
         </div>
       </ConstrainedDiv>
     </div>
