@@ -38,21 +38,33 @@
               "service_image": {
                 "type": "Image",
                 "config": {
-                  "label": "Service Image"
+                  "constraint": {},
+                  "label": "Zdjęcie"
                 }
               },
               "service_title": {
                 "type": "StructuredText",
                 "config": {
-                  "single": "heading3",
-                  "label": "Service Title"
+                  "label": "Taniec",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "heading3"
+                }
+              },
+              "service_tag": {
+                "type": "Text",
+                "config": {
+                  "label": "Tag",
+                  "placeholder": ""
                 }
               },
               "service_description": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph,strong,em",
-                  "label": "Service Description"
+                  "label": "Opis",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,strong,em"
                 }
               }
             }

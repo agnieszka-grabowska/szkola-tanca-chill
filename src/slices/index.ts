@@ -10,7 +10,6 @@ export const components = {
   ),
   image_collage: dynamic(() => import("./ImageCollage")),
   media_gallery: dynamic(() => import("./MediaGallery")),
-  rich_text: dynamic(() => import("./RichText")),
   schedule_grid: dynamic(() => import("./ScheduleGrid")),
   services_grid: dynamic(() => import("./ServicesGrid")),
   side_by_side_image_text: dynamic(() => import("./SideBySideImageText")),

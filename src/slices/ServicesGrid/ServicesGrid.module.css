@@ -59,6 +59,10 @@
   max-height: 90%;
 }
 
+.serviceItem:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
 .serviceItem:nth-child(2n) .blob {
   color: #e5b917;
 }
@@ -93,6 +97,10 @@
   padding: 4px 16px;
   width: max-content;
   margin-block: 16px 24px;
+}
+
+.textWrapper h3:has(~ p) {
+  margin-bottom: 8px;
 }
 
 @media (max-width: 700px) {

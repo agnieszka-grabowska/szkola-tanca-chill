@@ -1,6 +1,6 @@
 "use client";
 import { FC } from "react";
-import { Content, ImageField, RichTextField, TitleField } from "@prismicio/client";
+import { Content, ImageField, KeyTextField, RichTextField, TitleField } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
@@ -32,23 +32,12 @@ const ServicesGrid: FC<ServicesGridProps> = ({ slice }) => {
         <div className={styles.services}>
           {slice.primary.services.map((item, index) => (
             <div className={styles.serviceItem} key={index}>
-              {index % 2 !== 0 ? (
-                <>
-                  <ServiceItemText
-                    title={item.service_title}
-                    description={item.service_description}
-                  />
-                  <ServiceItemImage item={item.service_image} />
-                </>
-              ) : (
-                <>
-                  <ServiceItemImage item={item.service_image} />
-                  <ServiceItemText
-                    title={item.service_title}
-                    description={item.service_description}
-                  />
-                </>
-              )}
+              <ServiceItemText
+                title={item.service_title}
+                tag={item.service_tag}
+                description={item.service_description}
+              />
+              <ServiceItemImage item={item.service_image} />
             </div>
           ))}
         </div>
@@ -62,14 +51,16 @@ export default ServicesGrid;
 function ServiceItemText({
   title,
   description,
+  tag,
 }: {
   title: TitleField;
   description: RichTextField;
+  tag: KeyTextField;
 }) {
   return (
     <div className={styles.textWrapper}>
       <PrismicRichText field={title} />
-      <div className={styles.tag}>Dla zaawansowanych i początkujących</div>
+      {tag && <div className={styles.tag}>{tag}</div>}
       <PrismicRichText field={description} />
     </div>
   );

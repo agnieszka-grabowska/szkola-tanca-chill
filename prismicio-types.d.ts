@@ -143,8 +143,7 @@ export type KontaktDocument<Lang extends string = string> =
 type PageDocumentDataSlicesSlice =
   | ContentImageSplitSlice
   | SideBySideImageTextSlice
-  | ImageCollageSlice
-  | RichTextSlice;
+  | ImageCollageSlice;
 
 /**
  * Content for Page documents
@@ -728,51 +727,6 @@ export type MediaGallerySlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *RichText → Default → Primary*
- */
-export interface RichTextSliceDefaultPrimary {
-  /**
-   * Content field in *RichText → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.default.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Default variation for RichText Slice
- *
- * - **API ID**: `default`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<RichTextSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *RichText*
- */
-type RichTextSliceVariation = RichTextSliceDefault;
-
-/**
- * RichText Shared Slice
- *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSlice = prismic.SharedSlice<
-  "rich_text",
-  RichTextSliceVariation
->;
-
-/**
  * Primary content in *ScheduleGrid → Default → Primary*
  */
 export interface ScheduleGridSliceDefaultPrimary {
@@ -842,7 +796,7 @@ export type ScheduleGridSlice = prismic.SharedSlice<
  */
 export interface ServicesGridSliceStandardViewPrimaryServicesItem {
   /**
-   * Service Image field in *ServicesGrid → Standard View → Primary → Oferta*
+   * Zdjęcie field in *ServicesGrid → Standard View → Primary → Oferta*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -852,7 +806,7 @@ export interface ServicesGridSliceStandardViewPrimaryServicesItem {
   service_image: prismic.ImageField<never>;
 
   /**
-   * Service Title field in *ServicesGrid → Standard View → Primary → Oferta*
+   * Taniec field in *ServicesGrid → Standard View → Primary → Oferta*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -862,7 +816,17 @@ export interface ServicesGridSliceStandardViewPrimaryServicesItem {
   service_title: prismic.TitleField;
 
   /**
-   * Service Description field in *ServicesGrid → Standard View → Primary → Oferta*
+   * Tag field in *ServicesGrid → Standard View → Primary → Oferta*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_grid.standard_view.primary.services[].service_tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  service_tag: prismic.KeyTextField;
+
+  /**
+   * Opis field in *ServicesGrid → Standard View → Primary → Oferta*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -1166,10 +1130,6 @@ declare module "@prismicio/client" {
       MediaGallerySliceGridGalleryPrimary,
       MediaGallerySliceVariation,
       MediaGallerySliceGridGallery,
-      RichTextSlice,
-      RichTextSliceDefaultPrimary,
-      RichTextSliceVariation,
-      RichTextSliceDefault,
       ScheduleGridSlice,
       ScheduleGridSliceDefaultPrimary,
       ScheduleGridSliceVariation,
