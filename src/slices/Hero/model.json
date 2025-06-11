@@ -1,7 +1,7 @@
 {
   "type": "SharedSlice",
   "id": "highlighted_hero_with_statistics",
-  "name": "HighlightedHeroWithStatistics",
+  "name": "Hero",
   "variations": [
     {
       "id": "default",
@@ -11,13 +11,6 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
-        "section_label": {
-          "type": "Text",
-          "config": {
-            "label": "Kolorowy nagłówek",
-            "placeholder": ""
-          }
-        },
         "section_title": {
           "type": "StructuredText",
           "config": {
@@ -45,27 +38,6 @@
           "type": "Image",
           "config": {
             "label": "Image"
-          }
-        },
-        "statistics": {
-          "type": "Group",
-          "config": {
-            "label": "Statistics",
-            "fields": {
-              "stat_number": {
-                "type": "Text",
-                "config": {
-                  "label": "Stat Number"
-                }
-              },
-              "stat_label": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph,strong",
-                  "label": "Stat Label"
-                }
-              }
-            }
           }
         }
       },

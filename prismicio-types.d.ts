@@ -269,11 +269,11 @@ export type AllDocumentTypes =
   | SocialMediaDocument;
 
 /**
- * Primary content in *ContactMapForm → Default → Primary*
+ * Primary content in *ContactForm → Default → Primary*
  */
 export interface ContactMapFormSliceDefaultPrimary {
   /**
-   * Title field in *ContactMapForm → Default → Primary*
+   * Title field in *ContactForm → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -283,7 +283,7 @@ export interface ContactMapFormSliceDefaultPrimary {
   title: prismic.TitleField;
 
   /**
-   * Description field in *ContactMapForm → Default → Primary*
+   * Description field in *ContactForm → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -294,7 +294,7 @@ export interface ContactMapFormSliceDefaultPrimary {
 }
 
 /**
- * Default variation for ContactMapForm Slice
+ * Default variation for ContactForm Slice
  *
  * - **API ID**: `default`
  * - **Description**: Standard layout with left-side map and right-side contact form with title, description, form fields, and button.
@@ -307,12 +307,12 @@ export type ContactMapFormSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *ContactMapForm*
+ * Slice variation for *ContactForm*
  */
 type ContactMapFormSliceVariation = ContactMapFormSliceDefault;
 
 /**
- * ContactMapForm Shared Slice
+ * ContactForm Shared Slice
  *
  * - **API ID**: `contact_map_form`
  * - **Description**: *None*
@@ -439,46 +439,11 @@ export type ContentImageSplitSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *HighlightedHeroWithStatistics → Default → Primary → Statistics*
- */
-export interface HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem {
-  /**
-   * Stat Number field in *HighlightedHeroWithStatistics → Default → Primary → Statistics*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.statistics[].stat_number
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  stat_number: prismic.KeyTextField;
-
-  /**
-   * Stat Label field in *HighlightedHeroWithStatistics → Default → Primary → Statistics*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.statistics[].stat_label
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  stat_label: prismic.RichTextField;
-}
-
-/**
- * Primary content in *HighlightedHeroWithStatistics → Default → Primary*
+ * Primary content in *Hero → Default → Primary*
  */
 export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   /**
-   * Kolorowy nagłówek field in *HighlightedHeroWithStatistics → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.section_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  section_label: prismic.KeyTextField;
-
-  /**
-   * Nagłówek field in *HighlightedHeroWithStatistics → Default → Primary*
+   * Nagłówek field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -488,7 +453,7 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   section_title: prismic.RichTextField;
 
   /**
-   * Description field in *HighlightedHeroWithStatistics → Default → Primary*
+   * Description field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -498,7 +463,7 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Button field in *HighlightedHeroWithStatistics → Default → Primary*
+   * Button field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Poznaj Nas
@@ -508,7 +473,7 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   button: prismic.KeyTextField;
 
   /**
-   * Image field in *HighlightedHeroWithStatistics → Default → Primary*
+   * Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -516,22 +481,10 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
-
-  /**
-   * Statistics field in *HighlightedHeroWithStatistics → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.statistics[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  statistics: prismic.GroupField<
-    Simplify<HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem>
-  >;
 }
 
 /**
- * Default variation for HighlightedHeroWithStatistics Slice
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default variation with main title, description, image and statistics.
@@ -545,13 +498,13 @@ export type HighlightedHeroWithStatisticsSliceDefault =
   >;
 
 /**
- * Slice variation for *HighlightedHeroWithStatistics*
+ * Slice variation for *Hero*
  */
 type HighlightedHeroWithStatisticsSliceVariation =
   HighlightedHeroWithStatisticsSliceDefault;
 
 /**
- * HighlightedHeroWithStatistics Shared Slice
+ * Hero Shared Slice
  *
  * - **API ID**: `highlighted_hero_with_statistics`
  * - **Description**: *None*
@@ -1116,7 +1069,6 @@ declare module "@prismicio/client" {
       ContentImageSplitSliceImageRight,
       ContentImageSplitSliceImageLeft,
       HighlightedHeroWithStatisticsSlice,
-      HighlightedHeroWithStatisticsSliceDefaultPrimaryStatisticsItem,
       HighlightedHeroWithStatisticsSliceDefaultPrimary,
       HighlightedHeroWithStatisticsSliceVariation,
       HighlightedHeroWithStatisticsSliceDefault,

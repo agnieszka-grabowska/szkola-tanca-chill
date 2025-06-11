@@ -3,11 +3,9 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  contact_map_form: dynamic(() => import("./ContactMapForm")),
+  contact_map_form: dynamic(() => import("./ContactForm")),
   content_image_split: dynamic(() => import("./ContentImageSplit")),
-  highlighted_hero_with_statistics: dynamic(
-    () => import("./HighlightedHeroWithStatistics"),
-  ),
+  highlighted_hero_with_statistics: dynamic(() => import("./Hero")),
   image_collage: dynamic(() => import("./ImageCollage")),
   media_gallery: dynamic(() => import("./MediaGallery")),
   schedule_grid: dynamic(() => import("./ScheduleGrid")),

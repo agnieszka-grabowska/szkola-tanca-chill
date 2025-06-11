@@ -1,7 +1,7 @@
 {
   "type": "SharedSlice",
   "id": "contact_map_form",
-  "name": "ContactMapForm",
+  "name": "ContactForm",
   "variations": [
     {
       "id": "default",
