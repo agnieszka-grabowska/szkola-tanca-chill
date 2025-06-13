@@ -4,94 +4,12 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomePageDocumentDataSlicesSlice =
-  | ContactMapFormSlice
-  | StepsWithIntroSlice
-  | ScheduleGridSlice
-  | ServicesGridSlice
-  | MediaGallerySlice
-  | HighlightedHeroWithStatisticsSlice;
-
 /**
- * Content for Strona Główna documents
- */
-interface HomePageDocumentData {
-  /**
-   * Tytuł field in *Strona Główna*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Szkoła Tańca Chill
-   * - **API ID Path**: HomePage.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Slice Zone field in *Strona Główna*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: HomePage.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<HomePageDocumentDataSlicesSlice> /**
-   * Meta Title field in *Strona Główna*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: HomePage.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Strona Główna*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: HomePage.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Strona Główna*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: HomePage.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-}
-
-/**
- * Strona Główna document from Prismic
- *
- * - **API ID**: `HomePage`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type HomePageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<HomePageDocumentData>,
-    "HomePage",
-    Lang
-  >;
-
-/**
- * Content for kontakt documents
+ * Content for Kontakt documents
  */
 interface KontaktDocumentData {
   /**
-   * Adres field in *kontakt*
+   * Adres field in *Kontakt*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -102,7 +20,7 @@ interface KontaktDocumentData {
   address: prismic.KeyTextField;
 
   /**
-   * Email field in *kontakt*
+   * Email field in *Kontakt*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -113,7 +31,7 @@ interface KontaktDocumentData {
   email: prismic.KeyTextField;
 
   /**
-   * Numer telefonu field in *kontakt*
+   * Numer telefonu field in *Kontakt*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -125,7 +43,7 @@ interface KontaktDocumentData {
 }
 
 /**
- * kontakt document from Prismic
+ * Kontakt document from Prismic
  *
  * - **API ID**: `kontakt`
  * - **Repeatable**: `false`
@@ -269,7 +187,6 @@ export type SocialMediaDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  | HomePageDocument
   | KontaktDocument
   | PageDocument
   | SocialMediaDocument;
@@ -1052,9 +969,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      HomePageDocument,
-      HomePageDocumentData,
-      HomePageDocumentDataSlicesSlice,
       KontaktDocument,
       KontaktDocumentData,
       PageDocument,
