@@ -141,6 +141,12 @@ export type KontaktDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | StepsWithIntroSlice
+  | HighlightedHeroWithStatisticsSlice
+  | MediaGallerySlice
+  | ScheduleGridSlice
+  | ServicesGridSlice
+  | ContactMapFormSlice
   | ContentImageSplitSlice
   | SideBySideImageTextSlice
   | ImageCollageSlice;
