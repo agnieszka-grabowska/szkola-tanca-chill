@@ -89,10 +89,7 @@
     align-items: center;
     padding-block: 16px;
     height: 100svh;
-    transform: scale(1.2);
-    transition:
-      transform 0.5s cubic-bezier(0.18, 0.89, 0.28, 1),
-      opacity 0.5s cubic-bezier(0.18, 0.89, 0.28, 1);
+    transition: opacity 0.5s cubic-bezier(0.18, 0.89, 0.28, 1);
     background-color: #e5b917;
     opacity: 0;
     pointer-events: none;
@@ -111,12 +108,9 @@
   }
 
   .open {
-    transform: scale(1);
     opacity: 1;
     pointer-events: auto;
-    transition:
-      transform 0.3s cubic-bezier(0.18, 0.89, 0.28, 1),
-      opacity 0.3s cubic-bezier(0.18, 0.89, 0.28, 1);
+    transition: opacity 0.3s cubic-bezier(0.18, 0.89, 0.28, 1);
   }
 
   .logo:has(~ nav.open) > svg {
