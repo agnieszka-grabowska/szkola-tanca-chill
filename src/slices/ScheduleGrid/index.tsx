@@ -4,6 +4,7 @@ import { PrismicTable, SliceComponentProps } from "@prismicio/react";
 import styles from "./ScheduleGrid.module.css";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
+import FadeInDiv from "@/components/FadeInDiv/FadeInDiv";
 
 /**
  * Props for `ScheduleGrid`.
@@ -22,17 +23,19 @@ const ScheduleGrid: FC<ScheduleGridProps> = ({ slice }) => {
       id="harmonogram"
     >
       <ConstrainedDiv>
-        <StyledPrismicRichText field={slice.primary.title} />
-        <StyledPrismicRichText field={slice.primary.description} />
-        <div
-          style={{
-            overflowX: "auto",
-            marginInline: "-16px",
-            paddingBlock: "16px",
-          }}
-        >
-          <PrismicTable field={slice.primary.harmonogram} />
-        </div>
+        <FadeInDiv from="center">
+          <StyledPrismicRichText field={slice.primary.title} />
+          <StyledPrismicRichText field={slice.primary.description} />
+          <div
+            style={{
+              overflowX: "auto",
+              marginInline: "-16px",
+              paddingBlock: "16px",
+            }}
+          >
+            <PrismicTable field={slice.primary.harmonogram} />
+          </div>
+        </FadeInDiv>
       </ConstrainedDiv>
     </section>
   );

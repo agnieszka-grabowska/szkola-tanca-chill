@@ -3,12 +3,10 @@
   display: grid;
   grid-template-columns: 45% 55%;
   transform-style: preserve-3d;
+  align-items: center;
 }
 
 .textWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   transform: translateZ(1px) scale(0.9);
 
   & h1 {
@@ -44,6 +42,8 @@
     grid-template-columns: 1fr;
   }
   .textWrapper {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
     padding: 80px 16px 200px;

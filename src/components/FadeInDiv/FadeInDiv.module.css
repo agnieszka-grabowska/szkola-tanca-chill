@@ -1,0 +1,17 @@
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+.initial {
+  opacity: 0;
+  scale: var(--scale);
+  transform: translateX(var(--translateX)) translateY(var(--translateY));
+}

@@ -5,6 +5,8 @@
 
 .title {
   max-width: 600px;
+  text-align: center;
+  margin: 0 auto 150px;
   *:first-child {
     margin-bottom: 16px;
   }
@@ -38,7 +40,7 @@
     10.2px 54.6px 62.5px -2.5px hsl(var(--shadow-color) / 0.34);
 }
 
-.serviceItem {
+.serviceItem > div {
   display: flex;
   gap: 32px;
   align-items: center;
@@ -59,7 +61,7 @@
   max-height: 90%;
 }
 
-.serviceItem:nth-child(2n) {
+.serviceItem:nth-child(2n) > div {
   flex-direction: row-reverse;
 }
 

@@ -2,7 +2,7 @@
   margin-block: 80px;
   scroll-margin: 100px;
 }
-.wrapper > div {
+.wrapper > div > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
