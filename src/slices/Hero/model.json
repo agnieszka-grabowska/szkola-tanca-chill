@@ -27,17 +27,21 @@
             "label": "Description"
           }
         },
-        "button": {
-          "type": "Text",
-          "config": {
-            "label": "Button",
-            "placeholder": "Poznaj Nas"
-          }
-        },
         "image": {
           "type": "Image",
           "config": {
             "label": "Image"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
           }
         }
       },

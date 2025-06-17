@@ -32,7 +32,7 @@ const HighlightedHeroWithStatistics: FC<HighlightedHeroWithStatisticsProps> = ({
         <div className={styles.textWrapper}>
           <StyledPrismicRichText field={slice.primary.section_title} />
           <StyledPrismicRichText field={slice.primary.description} />
-          {slice.primary.button && <Button onClick={() => {}}>{slice.primary.button}</Button>}
+          {slice.primary.button && <Button field={slice.primary.button}></Button>}
         </div>
       </FadeInDiv>
     </section>

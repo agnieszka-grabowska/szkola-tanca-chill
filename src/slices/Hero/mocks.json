@@ -38,11 +38,6 @@
 				"credits": null,
 				"__TYPE__": "ImageContent"
 			},
-			"button": {
-				"__TYPE__": "FieldContent",
-				"value": "frame",
-				"type": "Text"
-			},
 			"section_title": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -53,6 +48,15 @@
 						}
 					}
 				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"key": "824a22a0-29dc-4b21-80e0-04c5527a5f26",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "human"
+				}
 			}
 		},
 		"items": []

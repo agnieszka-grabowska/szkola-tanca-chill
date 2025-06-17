@@ -386,16 +386,6 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Button field in *Hero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Poznaj Nas
-   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.button
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button: prismic.KeyTextField;
-
-  /**
    * Image field in *Hero → Default → Primary*
    *
    * - **Field Type**: Image
@@ -404,6 +394,16 @@ export interface HighlightedHeroWithStatisticsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * button field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: highlighted_hero_with_statistics.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
