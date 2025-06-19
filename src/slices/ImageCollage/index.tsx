@@ -5,6 +5,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import styles from "./styles.module.css";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import Heading from "@/components/Heading/Heading";
+import FadeInDiv from "@/components/FadeInDiv/FadeInDiv";
 
 /**
  * Props for `ImageCollage`.
@@ -22,11 +23,15 @@ const ImageCollage: FC<ImageCollageProps> = ({ slice }) => {
       className={styles.wrapper}
     >
       <ConstrainedDiv>
-        <Heading>{slice.primary.header}</Heading>
+        <FadeInDiv>
+          <Heading>{slice.primary.header}</Heading>
+        </FadeInDiv>
         <div className={styles.imagesGrid}>
           {slice.primary.images.map((item) => (
             <div className={styles.imageWrapper} key={item.image.id}>
-              <PrismicNextImage field={item.image} />
+              <FadeInDiv from="center">
+                <PrismicNextImage field={item.image} />
+              </FadeInDiv>
             </div>
           ))}
         </div>

@@ -40,6 +40,14 @@
   z-index: 1;
   grid-row: 2 / span 1;
 }
+
+.frontImage > div {
+  height: 100%;
+}
+.frontImage img {
+  width: auto;
+}
+
 .redSquare {
   background-color: var(--red);
   grid-column: 2 / 5;
@@ -64,12 +72,21 @@
     grid-template-rows: 120px 1fr 300px;
   }
 
+  .frontImage > div {
+    width: 100%;
+  }
+
   .frontImage {
     grid-column: 1 / -1;
     width: 100%;
     padding: 24px;
     z-index: 1;
     grid-row: 3;
+  }
+
+  .frontImage img {
+    width: 100%;
+    height: auto;
   }
 
   .content {

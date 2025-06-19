@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import styles from "./styles.module.css";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
+import FadeInDiv from "@/components/FadeInDiv/FadeInDiv";
 
 /**
  * Props for `SideBySideImageText`.
@@ -24,12 +25,16 @@ const SideBySideImageText: FC<SideBySideImageTextProps> = ({ slice }) => {
         <PrismicNextImage field={slice.primary.back_image} />
       </div>
       <div className={styles.frontImage}>
-        <PrismicNextImage field={slice.primary.front_image} />
+        <FadeInDiv from="left">
+          <PrismicNextImage field={slice.primary.front_image} />
+        </FadeInDiv>
       </div>
       <div className={styles.redSquare}></div>
       <div className={styles.content}>
-        <StyledPrismicRichText field={slice.primary.heading} />
-        <StyledPrismicRichText field={slice.primary.body} />
+        <FadeInDiv from="right">
+          <StyledPrismicRichText field={slice.primary.heading} />
+          <StyledPrismicRichText field={slice.primary.body} />
+        </FadeInDiv>
       </div>
     </section>
   );

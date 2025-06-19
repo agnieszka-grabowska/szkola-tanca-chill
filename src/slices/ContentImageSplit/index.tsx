@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import { PrismicNextImage } from "@prismicio/next";
 import ConstrainedDiv from "@/components/ConstrainedDiv/ConstrainedDiv";
 import StyledPrismicRichText from "@/components/StyledPrismicRichText/StyledPrismicRichText";
+import FadeInDiv from "@/components/FadeInDiv/FadeInDiv";
 
 /**
  * Props for `ContentImageSplit`.
@@ -28,11 +29,15 @@ const ContentImageSplit: FC<ContentImageSplitProps> = ({ slice }) => {
     >
       <ConstrainedDiv>
         <div className={styles.contentWrapper}>
-          <StyledPrismicRichText field={slice.primary.heading} />
-          <StyledPrismicRichText field={slice.primary.content} />
+          <FadeInDiv from={slice.variation === "imageLeft" ? "right" : "left"}>
+            <StyledPrismicRichText field={slice.primary.heading} />
+            <StyledPrismicRichText field={slice.primary.content} />
+          </FadeInDiv>
         </div>
         <div className={styles.imageWrapper}>
-          <PrismicNextImage field={slice.primary.side_image} />
+          <FadeInDiv from={slice.variation === "imageLeft" ? "left" : "right"}>
+            <PrismicNextImage field={slice.primary.side_image} />
+          </FadeInDiv>
         </div>
       </ConstrainedDiv>
     </section>
