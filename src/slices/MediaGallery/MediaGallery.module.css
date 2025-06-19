@@ -55,9 +55,9 @@
 }
 
 .galleryPreview {
-  overflow-x: scroll;
-  padding: 16px;
-  margin-inline: -16px;
+  overflow-x: auto;
+  padding: 20px;
+  margin-inline: -20px;
   display: flex;
   gap: clamp(24px, 4vw, 64px);
 }
