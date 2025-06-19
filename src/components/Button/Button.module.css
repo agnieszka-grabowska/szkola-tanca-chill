@@ -1,10 +1,10 @@
 .button {
   display: block;
   width: fit-content;
-  background-color: #ac3726;
+  background-color: var(--red);
   color: white;
   border: none;
-  border: #ac3726 2px solid;
+  border: var(--red) 2px solid;
   border-radius: 8px;
   padding: 12px 30px;
   font-weight: 700;
@@ -17,13 +17,13 @@
 }
 
 .button:hover {
-  border: #ac3726 2px solid;
+  border: var(--red) 2px solid;
   background-color: #c05a4a;
 }
 
 .secondary {
   background-color: transparent;
-  color: #ac3726;
+  color: var(--red);
   display: flex;
   align-items: center;
   gap: 6px;

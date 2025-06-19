@@ -2,12 +2,12 @@ button {
   cursor: pointer;
 }
 
+html,
 body {
-  background: linear-gradient(to top, #fff8e3, #fff8e3);
-}
-
-html {
-  background-color: #fff8e3;
+  --light-yellow: #fff8e3;
+  --yellow: #e5b917;
+  --red: #ac3726;
+  background-color: var(--light-yellow);
 }
 
 .parallax {
@@ -72,7 +72,6 @@ a {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: #fef4ea;
 }
 
 img,

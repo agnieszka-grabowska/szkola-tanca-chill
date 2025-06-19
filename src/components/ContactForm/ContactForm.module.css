@@ -26,7 +26,7 @@
 }
 
 .error {
-  color: #ac3726;
-  border: #ac3726 1px solid;
+  color: var(--red);
+  border: var(--red) 1px solid;
   padding: 10px;
 }

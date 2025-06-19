@@ -3,12 +3,12 @@
   transform-style: preserve-3d;
   padding-block: 200px;
   margin-bottom: -100px;
-  background-color: #ac3726;
+  background-color: var(--red);
   position: relative;
   z-index: 1;
 
   & h2 {
-    color: #e5b917;
+    color: var(--yellow);
   }
 
   & p {

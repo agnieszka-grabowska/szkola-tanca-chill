@@ -1,5 +1,5 @@
 .footer {
-  background-color: #ac3726;
+  background-color: var(--red);
   color: #f7f2f1;
 
   & ul {
@@ -51,7 +51,7 @@
   max-height: 70px;
   width: auto;
   margin-bottom: 16px;
-  color: #e5b917;
+  color: var(--yellow);
 }
 
 .navigation {

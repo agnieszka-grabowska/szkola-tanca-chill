@@ -44,9 +44,9 @@
     & tr:not(:first-of-type) td:not(:first-of-type) p {
       padding: 8px 16px;
       background-color: #f3e1de;
-      border: 2px #ac3726 solid;
+      border: 2px var(--red) solid;
       height: 100%;
-      color: #ac3726;
+      color: var(--red);
       border-radius: 8px;
     }
   }

@@ -1,14 +1,14 @@
 .wrapper {
   margin-block: 200px;
   padding-block: 48px;
-  background-color: #ac3726;
+  background-color: var(--red);
 
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(1px) scale(0.9);
 
   & h2 {
-    color: #e5b917;
+    color: var(--yellow);
     text-align: center;
   }
 }
