@@ -43,27 +43,14 @@
     }
     & tr:not(:first-of-type) td:not(:first-of-type) p {
       padding: 8px 16px;
-      background-color: #f3e1de;
-      border: 2px var(--red) solid;
       height: 100%;
       color: var(--red);
-      border-radius: 8px;
     }
   }
 }
 
 @media (max-width: 500px) {
-  .schedule {
-    & table {
-      & tr:not(:first-of-type) td:not(:first-of-type):not(:empty) {
-        padding: 0px;
-        background-color: #f3e1de;
-      }
-      & tr:not(:first-of-type) td:not(:first-of-type) p {
-        padding: 8px 16px;
-        border: none;
-        border-radius: 0;
-      }
-    }
+  .schedule table {
+    border-radius: 0;
   }
 }
