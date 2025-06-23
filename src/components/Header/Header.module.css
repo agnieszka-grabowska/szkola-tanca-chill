@@ -5,6 +5,7 @@
   z-index: 100;
   background-color: #ffffff0a;
   backdrop-filter: blur(10px);
+  color: #3a1719;
 }
 
 .headerWrapper > div {
@@ -31,7 +32,7 @@
 
 .logo > svg:hover {
   transition: transform 0.1s ease-out;
-  transform: rotate(-2deg) scale(0.95);
+  transform: rotate(-2deg) scale(1.1);
 }
 
 .navList {
@@ -72,6 +73,15 @@
   list-style: none;
   display: flex;
   gap: 16px;
+}
+
+.socialMedia li svg {
+  transition: transform 0.2s ease-out;
+}
+
+.socialMedia li:hover svg {
+  transition: transform 0.1s ease-out;
+  transform: rotate(3deg) scale(1.1);
 }
 
 .menuIcon {
