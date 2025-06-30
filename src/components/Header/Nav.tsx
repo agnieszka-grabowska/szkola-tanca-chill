@@ -14,7 +14,12 @@ export default function Nav({ socialMedia }: { socialMedia: Simplify<SocialMedia
 
   return (
     <>
-      <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
+      <Link
+        href="/"
+        className={styles.logo}
+        aria-label="Strona główna"
+        onClick={() => setIsOpen(false)}
+      >
         <Logo />
       </Link>
       <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
