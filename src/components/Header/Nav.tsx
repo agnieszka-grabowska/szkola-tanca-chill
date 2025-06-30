@@ -23,7 +23,11 @@ export default function Nav({ socialMedia }: { socialMedia: Simplify<SocialMedia
         <Logo />
       </Link>
       <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
-        <button className={styles.closeIcon} onClick={() => setIsOpen(false)}>
+        <button
+          className={styles.closeIcon}
+          aria-label="Zamknij menu"
+          onClick={() => setIsOpen(false)}
+        >
           <FiX size={24} />
         </button>
         <ol className={styles.navList}>
@@ -58,7 +62,7 @@ export default function Nav({ socialMedia }: { socialMedia: Simplify<SocialMedia
         </ol>
       </nav>
       <SocialMedia socialMedia={socialMedia} />
-      <button className={styles.menuIcon} onClick={() => setIsOpen(true)}>
+      <button className={styles.menuIcon} aria-label="Otwórz menu" onClick={() => setIsOpen(true)}>
         <FiMenu size={24} />
       </button>
     </>

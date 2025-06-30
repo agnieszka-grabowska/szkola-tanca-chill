@@ -32,6 +32,7 @@ const ContactMapForm: FC<ContactMapFormProps> = ({ slice }) => {
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Mapa z lokalizacją szkoły tańca Chill"
           ></iframe>
           <div className={styles.contentWrapper}>
             <StyledPrismicRichText field={slice.primary.title} />
