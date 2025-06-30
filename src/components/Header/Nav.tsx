@@ -71,7 +71,7 @@ function SocialMedia({
     <ul className={`${styles.socialMedia} ${className || ""}`}>
       {socialMedia.links.map((item) => (
         <li key={item.name.text}>
-          <PrismicNextLink field={item.name}>
+          <PrismicNextLink field={item.name} aria-label={item.name.text}>
             {item.name.text?.toLowerCase() === "facebook" && <FiFacebook size={24} />}
             {item.name.text?.toLowerCase() === "instagram" && <FiInstagram size={24} />}
             {item.name.text?.toLowerCase() !== "instagram" &&
