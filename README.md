@@ -1,96 +1,47 @@
-# Prismic + Next.js Minimal Starter
+# Dance School Chill Website
 
-Want to quickly get started building your own project with [Prismic][prismic] and [Next.js][nextjs]? This project includes basic configurations and nothing else. The project includes one Rich Text slice, a homepage, and a dynamic page.
+This is a responsive website built for a local dance school in Poznań. It provides essential information about the school, contact details, class schedules, dance styles offered, and photo galleries.
 
-- **Demo**: [Open live demo][live-demo]
-- **Learn more about Prismic and Next.js**: [Prismic Next.js Documentation][prismic-docs]
+The site is built with Next.js and integrates with Prismic CMS, which allows the school owner to easily manage and update content such as schedules, photos, and contact information.
 
-&nbsp;
+## Features
 
-![Website screenshot](https://user-images.githubusercontent.com/31219208/228821412-fdde92b2-c13c-4287-b799-611fa96a5fd6.png)
+- Mobile-friendly, responsive design for easy access on all devices
+- Built with Next.js and React for fast, interactive user experience
+- Content managed exclusively by the school owner through Prismic CMS
+- Sections include contact info, class schedules, dance styles, and photo gallery
+- Simple animations to enhance visual appeal
+- AI-generated placeholder images used before actual photos were added
 
-&nbsp;
+## Technologies Used
 
-## 🚀 Quick Start
+- Next.js
+- React
+- TypeScript
+- Prismic CMS
+- Figma (design prototype)
+- CSS Modules
 
-To start a new project using this starter:
+## Live Demo
 
-1. Visit <https://prismic.io/dashboard>.
-2. Create a new Prismic repository by selecting **Next.js**.
-3. Select the **Minimal starter**.
-4. Fill out your repository details and continue with the steps given in Prismic.
+Check out the live website here: [https://szkola-tanca-chill.vercel.app](https://szkola-tanca-chill.vercel.app)
 
-When you're ready to start your project, run the following command:
+## Access and Content Management
 
-```sh
-npm run dev
-```
+Only the dance school owner has access to the Prismic CMS dashboard to update content such as photos, schedules, and event details without needing technical support.
 
-## How to use your project
+## Notes
 
-To edit the content of this project, go to [prismic.io/dashboard](https://prismic.io/dashboard), click on the repository for this website, and start editing.
+This project was developed as a pro bono favor and is intended to provide a clean, easy-to-update online presence for the dance school Chill.
 
-### Create a page
+# About the original starter code
 
-To create a page, click on the green pencil icon, then select **Page**.
+This project uses Prismic’s [Next.js Minimal Starter](https://github.com/prismicio/nextjs-starter-prismic-minimal) as its base, which includes configuration for fetching and rendering content from Prismic CMS.
 
-Pages are made of Slices. You can add and rearrange Slices to your pages.
+For more info on Prismic and Next.js, see:
 
-Your new page will be accessible by its URL, but it won't appear on the website automatically. To let users discover it, add it to the navigation.
-
-### Preview documents
-
-If you chose this starter when you created a new repository from the Prismic Dashboard, then your repository is preconfigured with previews on localhost. To change the preview configuration or add previews to your production or staging environments, see [Preview Drafts in Next.js](https://prismic.io/docs/technologies/preview-content-nextjs) in the Prismic documentation.
-
-### Customize this website
-
-This website is preconfigured with Prismic. It has three Prismic packages installed:
-
-- `@prismicio/client` provides helpers for fetching content from Prismic
-- `@prismicio/react` provides React components for rendering content from Prismic
-- `@prismicio/next` provides a wrapper component to configure Prismic previews
-
-These packages are already integrated and employed in this app. Take a look at the code to see how they're used.
-
-### Edit the code
-
-There are two steps to rendering content from Prismic in your Next.js project:
-
-1. Fetch content from the Prismic API using `@prismicio/client`.
-2. Template the content using components from `@prismicio/react`.
-
-Here are some of the files in your project that you can edit:
-
-- `prismicio.ts` - This file includes configuration for `@prismicio/client` and exports useful API helpers.
-- `app/layout.tsx` - This is your layout component, which includes configuration for `@prismicio/react` and `@prismicio/next`.
-- `app/page.tsx` - This is the app homepage. It queries and renders a page document with the UID (unique identifier) "home" from the Prismic API.
-- `app/[uid]/page.tsx` - This is the page component, which queries and renders a page document from your Prismic repository based on the UID.
-- `slices/*/index.tsx` - Each Slice in your project has an index.tsx file that renders the Slice component. Edit this file to customize your Slices.
-
-These are important files that you should leave as-is:
-
-- `app/api/exit-preview/route.ts` - Do not edit or delete this file. This is the API endpoint to close a Prismic preview session.
-- `app/api/preview/route.ts` - Do not edit or delete this file. This is the API endpoint to launch a Prismic preview session.
-- `app/slice-simulator/page.tsx` - Do not edit or delete this file. This file simulates your Slice components in development.
-- `slices/` - This directory contains Slice components, which are generated programmatically by Slice Machine. To customize a Slice template, you can edit the Slice's index.tsx file. To add Slices, delete Slices, or edit Slice models, use Slice Machine (more info below).
-
-Learn more about how to edit your components with [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs) and [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs).
-
-Learn more about how to use [TypeScript with Prismic](https://prismic.io/docs/typescript-nextjs).
-
-### Deploy to the web
-
-To put your project online, see [Deploy your Next.js App](https://prismic.io/docs/technologies/deploy-nextjs).
-
-### Edit content models with Slice Machine
-
-This project includes an application called Slice Machine, which generates models for your Custom Types and Slices. Slice Machine stores the models locally in your codebase, so you can save and version them. It also syncs your models to Prismic. To learn how to use Slice Machine, read [Model Content in Next.js](https://prismic.io/docs/technologies/model-content-nextjs).
-
-If you change or add to your Custom Types, you'll need to update your route handling to match. To learn how to do that, read [Define Paths in Next.js](https://prismic.io/docs/technologies/define-paths-nextjs).
-
-## Documentation
-
-For the official Prismic documentation, see [Prismic's guide for Next.js][prismic-docs] or the [technical references for the installed Prismic packages](https://prismic.io/docs/technologies/technical-references).
+- [Prismic Next.js Documentation](https://prismic.io/docs/technologies/nextjs)
+- [Prismic Official Website](https://prismic.io/)
 
 ## License
 
@@ -109,9 +60,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-[prismic]: https://prismic.io/
-[prismic-docs]: https://prismic.io/docs/technologies/nextjs
-[prismic-sign-up]: https://prismic.io/dashboard/signup
-[nextjs]: https://nextjs.org/
-[live-demo]: https://nextjs-starter-prismic-minimal.vercel.app/
