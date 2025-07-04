@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../svg/Logo";
+import Logo from "../Logo";
 import styles from "./Footer.module.css";
 import ConstrainedDiv from "../ConstrainedDiv/ConstrainedDiv";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
@@ -66,7 +66,6 @@ export default async function Footer() {
         </div>
         <div className={styles.copyright}>
           <p>
-            {" "}
             © 2025 Szkoła Tańca Chill | Made by{" "}
             <a href="https://agnieszkagrabowska.vercel.app">Agnieszka Grabowska</a>
           </p>

@@ -22,15 +22,14 @@
   color: inherit;
 }
 
-.logo > svg {
+.logo > img {
   max-height: 50px;
   width: auto;
-  color: var(--yellow);
   transition: transform 0.2s ease-out;
   min-width: 90px;
 }
 
-.logo > svg:hover {
+.logo > img:hover {
   transition: transform 0.1s ease-out;
   transform: rotate(-2deg) scale(1.1);
 }
@@ -139,9 +138,9 @@
     transition: opacity 0.3s cubic-bezier(0.18, 0.89, 0.28, 1);
   }
 
-  .logo:has(~ nav.open) > svg {
+  .logo:has(~ nav.open) > img {
     z-index: 2;
     position: relative;
-    color: black;
+    filter: brightness(0.2);
   }
 }

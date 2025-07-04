@@ -3,7 +3,7 @@
 import React from "react";
 import { FiFacebook } from "react-icons/fi";
 import { FiInstagram, FiAlertCircle, FiMenu, FiX } from "react-icons/fi";
-import Logo from "../../svg/Logo";
+import Logo from "../Logo";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import { Simplify, SocialMediaDocumentData } from "../../../prismicio-types";

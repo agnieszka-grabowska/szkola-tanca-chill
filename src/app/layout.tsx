@@ -3,7 +3,7 @@ import { repositoryName } from "@/prismicio";
 import { lexend } from "@/app/fonts";
 import "./globals.css";
 import Header from "@/components/Header/Header";
-import Logo from "@/svg/Logo";
+import Logo from "@/components/Logo";
 import Footer from "@/components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={`${lexend.className}`}>
         <Header />
         <div className="parallax">
-          <div className="parallax-layer layer2">
+          <div className="parallax-layer logo">
             <Logo />
           </div>
           {children}
