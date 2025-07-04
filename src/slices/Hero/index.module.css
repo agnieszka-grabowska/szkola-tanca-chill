@@ -46,7 +46,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 80px 16px 200px;
+    padding: 80px 0 200px;
 
     & h1 {
       font-size: 2rem;
